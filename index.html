@@ -1,0 +1,3164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Jackpot Casino — B1+/B2 Business English</title>
+
+  <!-- Google Fonts: Ornate Gold Serif + Clean Modern UI Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* =========================================================================
+       UNDERWATER CASINO & GOLD VINTAGE TYPOGRAPHY DESIGN SYSTEM
+       Strict 100dvh No-Global-Scroll Viewport Architecture
+    ========================================================================= */
+    :root {
+      --ocean-deep: #021520;
+      --ocean-mid: #052c40;
+      --ocean-light: #0a4c66;
+      --gold-1: #fff5c0;
+      --gold-2: #f2c94c;
+      --gold-3: #b88214;
+      --glass-bg: rgba(3, 25, 39, 0.72);
+      --glass-border: rgba(242, 201, 76, 0.28);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100dvh;
+      overflow: hidden;
+      font-family: 'Montserrat', sans-serif;
+      color: #eef6fa;
+      background: radial-gradient(ellipse at 50% 0%, #0d5d7a 0%, #052c40 42%, #021520 100%);
+      user-select: none;
+    }
+
+    /* Animated Caustic Light Rays from the Ocean Surface */
+    .caustic-rays {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .caustic-ray {
+      position: absolute;
+      top: -15%;
+      width: 22vw;
+      height: 130vh;
+      background: linear-gradient(180deg, rgba(125, 226, 255, 0.16) 0%, rgba(125, 226, 255, 0.04) 55%, transparent 100%);
+      filter: blur(18px);
+      transform-origin: top center;
+      animation: swayRay 9s ease-in-out infinite alternate;
+    }
+    .caustic-ray:nth-child(1) { left: 8%; transform: rotate(-14deg); animation-duration: 11s; }
+    .caustic-ray:nth-child(2) { left: 32%; width: 28vw; transform: rotate(-4deg); animation-duration: 8.5s; animation-delay: -2s; }
+    .caustic-ray:nth-child(3) { left: 60%; transform: rotate(8deg); animation-duration: 10s; animation-delay: -4s; }
+    .caustic-ray:nth-child(4) { left: 82%; width: 18vw; transform: rotate(16deg); animation-duration: 12s; animation-delay: -1s; }
+
+    @keyframes swayRay {
+      0% { opacity: 0.45; transform: skewX(-6deg) translateX(-12px); }
+      100% { opacity: 0.85; transform: skewX(6deg) translateX(18px); }
+    }
+
+    /* Canvases for Bubbles & Celebratory Fireworks/Confetti */
+    #bubblesCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    #fxCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 90;
+    }
+
+    /* Ornate Metallic Gold Serif Typography */
+    .font-gold-display {
+      font-family: 'Cinzel Decorative', 'Cinzel', serif;
+      background: linear-gradient(180deg, #fff5c0 0%, #f2c94c 48%, #b88214 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 12px rgba(242, 201, 76, 0.35));
+    }
+    .font-gold-serif {
+      font-family: 'Cinzel', serif;
+      background: linear-gradient(180deg, #fff5c0 0%, #f2c94c 52%, #b88214 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.85));
+    }
+
+    /* Glassmorphism Casino Panels */
+    .casino-glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.48), inset 0 1px 0 rgba(255, 245, 192, 0.14);
+    }
+
+    .gold-btn {
+      background: linear-gradient(180deg, #fce28b 0%, #d49b24 55%, #9c6a0c 100%);
+      color: #0b1922;
+      font-weight: 700;
+      border: 1px solid #fff5c0;
+      box-shadow: 0 4px 14px rgba(242, 201, 76, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+    .gold-btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
+    .gold-btn:active { transform: translateY(1px); }
+
+    /* Station Strict Label Colors */
+    .station-speaking-txt { color: #ff4d4f; text-shadow: 0 1px 6px rgba(230, 57, 70, 0.45); }
+    .station-listening-txt { color: #b0bec5; text-shadow: 0 1px 6px rgba(176, 190, 197, 0.35); }
+    .station-writing-txt { color: #2ecc71; text-shadow: 0 1px 6px rgba(46, 204, 113, 0.4); }
+    .station-reading-pill {
+      background: linear-gradient(135deg, #f7f4e9 0%, #e7dec5 100%);
+      border: 1px solid #f2c94c;
+      color: #001f54;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    }
+    .station-reading-txt { color: #001f54; font-weight: 800; }
+
+    /* Ace Card Bot Styling & Laser Scan Animation */
+    .ace-card-shell {
+      background: linear-gradient(160deg, #ffffff 0%, #f5eedc 100%);
+      color: #0b1824;
+      border: 2px solid #d49b24;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.55), 0 0 16px rgba(242, 201, 76, 0.28);
+      position: relative;
+      overflow: hidden;
+    }
+    .ace-laser {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #00f5d4, #fff5c0, #00f5d4, transparent);
+      box-shadow: 0 0 14px 3px rgba(0, 245, 212, 0.85);
+      top: -10px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .ace-scanning .ace-laser {
+      opacity: 1;
+      animation: laserSweep 0.7s ease-in-out infinite alternate;
+    }
+    @keyframes laserSweep {
+      0% { top: 4%; }
+      100% { top: 92%; }
+    }
+    .ace-eye {
+      animation: blinkEye 4.2s infinite;
+      transform-origin: center;
+    }
+    @keyframes blinkEye {
+      0%, 92%, 100% { transform: scaleY(1); }
+      95% { transform: scaleY(0.12); }
+    }
+
+    /* Subtle Internal Scrollbar only where strictly needed inside fixed cards */
+    .thin-scroll {
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(242, 201, 76, 0.4) transparent;
+    }
+    .thin-scroll::-webkit-scrollbar { width: 5px; height: 5px; }
+    .thin-scroll::-webkit-scrollbar-thumb {
+      background: rgba(242, 201, 76, 0.42);
+      border-radius: 999px;
+    }
+    .thin-scroll::-webkit-scrollbar-track { background: transparent; }
+
+    /* Allow text selection in inputs/textareas */
+    input, textarea { user-select: text; }
+
+    /* Active Tab Pill */
+    .tab-num-btn {
+      transition: all 0.15s ease;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(2, 21, 32, 0.65);
+    }
+    .tab-num-btn.active {
+      border-color: #f2c94c;
+      background: linear-gradient(180deg, rgba(242, 201, 76, 0.28), rgba(184, 130, 20, 0.2));
+      color: #fff5c0;
+      box-shadow: 0 0 10px rgba(242, 201, 76, 0.25);
+    }
+    .tab-num-btn.completed {
+      border-color: #2ecc71;
+      background: rgba(46, 204, 113, 0.18);
+    }
+
+    /* Pulse ring for live microphone */
+    .mic-pulse {
+      animation: micPulse 1.3s ease-out infinite;
+    }
+    @keyframes micPulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 77, 79, 0.7); }
+      100% { box-shadow: 0 0 0 14px rgba(255, 77, 79, 0); }
+    }
+  </style>
+</head>
+<body class="relative flex flex-col">
+
+  <!-- Animated Underwater Caustic Rays -->
+  <div class="caustic-rays" aria-hidden="true">
+    <div class="caustic-ray"></div>
+    <div class="caustic-ray"></div>
+    <div class="caustic-ray"></div>
+    <div class="caustic-ray"></div>
+  </div>
+
+  <!-- Background Underwater Bubbles Canvas -->
+  <canvas id="bubblesCanvas" aria-hidden="true"></canvas>
+
+  <!-- Foreground Confetti + Fireworks Canvas -->
+  <canvas id="fxCanvas" aria-hidden="true"></canvas>
+
+  <!-- =========================================================================
+       VIEW 1: WELCOME & LOGIN SCREEN (100dvh, No Vertical Scroll)
+  ========================================================================= -->
+  <section id="welcomeScreen" class="relative z-10 w-full h-[100dvh] flex flex-col items-center justify-center p-4">
+    <div class="casino-glass rounded-3xl w-full max-w-md p-6 sm:p-8 flex flex-col items-center text-center relative overflow-hidden">
+      <!-- Subtle Gold Corner Flourish -->
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#f2c94c] to-transparent"></div>
+
+      <!-- Custom Ornate Underwater Casino SVG Emblem -->
+      <div class="w-44 sm:w-52 mb-2">
+        <svg viewBox="0 0 260 150" class="w-full h-auto drop-shadow-[0_6px_16px_rgba(0,0,0,0.75)]" role="img" aria-label="Jackpot Casino Logo">
+          <defs>
+            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#fff8cc" />
+              <stop offset="48%" stop-color="#f2c94c" />
+              <stop offset="100%" stop-color="#a87310" />
+            </linearGradient>
+            <linearGradient id="chipBg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0b4f6c" />
+              <stop offset="100%" stop-color="#021826" />
+            </linearGradient>
+          </defs>
+          <!-- Trident Crown at Top -->
+          <path d="M130 6 L124 20 L130 16 L136 20 Z" fill="url(#goldGrad)" />
+          <path d="M110 14 L116 26 L123 22 M150 14 L144 26 L137 22" stroke="url(#goldGrad)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Golden Poker Chip Ring -->
+          <circle cx="130" cy="74" r="46" fill="url(#chipBg)" stroke="url(#goldGrad)" stroke-width="5" />
+          <circle cx="130" cy="74" r="38" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="7 5" />
+          <!-- Ace of Spades Card Emblem -->
+          <rect x="111" y="45" width="38" height="54" rx="5" fill="#faf6ea" stroke="url(#goldGrad)" stroke-width="2" transform="rotate(-7 130 72)" />
+          <text x="116" y="59" font-family="Cinzel, serif" font-size="11" font-weight="800" fill="#061a27" transform="rotate(-7 130 72)">A</text>
+          <!-- Spade Icon -->
+          <path d="M130 60 C123 68 119 73 123 77 C125 79 128 78 129 76 L127 83 L133 83 L131 76 C132 78 135 79 137 77 C141 73 137 68 130 60 Z" fill="#061a27" transform="rotate(-7 130 72)" />
+          <!-- Oceanic Waves Banner -->
+          <path d="M36 108 Q68 96 100 108 T164 108 T224 108" fill="none" stroke="#48cae4" stroke-width="2.2" opacity="0.75" />
+          <path d="M46 115 Q78 104 110 115 T174 115 T214 115" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.85" />
+          <!-- Gold Ribbon Text -->
+          <text x="130" y="138" text-anchor="middle" font-family="Cinzel Decorative, serif" font-size="22" font-weight="900" fill="url(#goldGrad)" letter-spacing="1.5">JACKPOT CASINO</text>
+        </svg>
+      </div>
+
+      <p class="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-cyan-200/90 font-semibold mb-4">
+        B1+ / B2 Professional English Challenge
+      </p>
+
+      <!-- Login / Register Form (Email + 4-Digit PIN Only) -->
+      <form id="loginForm" class="w-full space-y-3 text-left" autocomplete="off">
+        <div>
+          <label for="loginEmail" class="block text-[11px] uppercase tracking-wider text-amber-200/90 font-semibold mb-1">
+            Player Email
+          </label>
+          <input
+            id="loginEmail"
+            type="email"
+            required
+            placeholder="player@company.com"
+            class="w-full rounded-xl bg-[#031927]/85 border border-amber-300/35 px-3.5 py-2.5 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-amber-300 focus:ring-1 focus:ring-amber-300"
+          />
+        </div>
+
+        <div>
+          <label for="loginPin" class="block text-[11px] uppercase tracking-wider text-amber-200/90 font-semibold mb-1">
+            4-Digit PIN Password
+          </label>
+          <input
+            id="loginPin"
+            type="password"
+            inputmode="numeric"
+            pattern="[0-9]{4}"
+            maxlength="4"
+            required
+            placeholder="••••"
+            class="w-full rounded-xl bg-[#031927]/85 border border-amber-300/35 px-3.5 py-2.5 text-center text-lg tracking-[0.6em] font-bold text-amber-200 placeholder-slate-500 focus:outline-none focus:border-amber-300 focus:ring-1 focus:ring-amber-300"
+          />
+        </div>
+
+        <p id="loginError" class="hidden text-xs text-red-400 bg-red-950/60 border border-red-400/40 rounded-lg px-3 py-1.5 text-center"></p>
+
+        <button type="submit" class="gold-btn w-full rounded-xl py-3 text-sm uppercase tracking-wider mt-1">
+          Enter Jackpot Casino
+        </button>
+      </form>
+
+      <div class="mt-4 flex items-center justify-between w-full text-[11px] text-cyan-200/70">
+        <span>Progress saved locally</span>
+        <button id="welcomeCroupierBtn" type="button" class="text-amber-300 hover:text-amber-200 font-semibold underline underline-offset-2">
+          CROUPIER Admin
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VIEW 2: MAIN APP SHELL (100dvh, Fixed Topbar + Collapsible Sidebar + Stage)
+  ========================================================================= -->
+  <div id="appShell" class="hidden relative z-10 w-full h-[100dvh] flex flex-col overflow-hidden">
+
+    <!-- TOP NAVIGATION BAR -->
+    <header class="casino-glass border-x-0 border-t-0 px-3 sm:px-4 h-14 shrink-0 flex items-center justify-between gap-2 z-30">
+      <div class="flex items-center gap-2 min-w-0">
+        <!-- Mobile Sidebar Toggle -->
+        <button id="mobileMenuBtn" type="button" class="lg:hidden p-2 rounded-xl bg-white/10 hover:bg-white/20 text-amber-200" aria-label="Open Stations Menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <div class="flex items-center gap-2 truncate">
+          <span class="text-xl hidden sm:inline">♠️</span>
+          <h1 class="font-gold-display text-sm sm:text-lg tracking-wider truncate">JACKPOT CASINO</h1>
+        </div>
+      </div>
+
+      <!-- Center: Active Station 7-Minute Timer Bar -->
+      <div id="topTimerWrap" class="hidden items-center gap-2 bg-[#021520]/80 border border-amber-300/35 rounded-full px-3 py-1">
+        <span class="text-[10px] uppercase tracking-wider text-cyan-200 hidden md:inline">Station Timer</span>
+        <span id="timerDisplay" class="font-mono font-bold text-sm text-amber-300">07:00</span>
+        <div class="w-14 sm:w-20 h-1.5 bg-slate-800 rounded-full overflow-hidden hidden sm:block">
+          <div id="timerProgress" class="h-full bg-gradient-to-r from-emerald-400 via-amber-300 to-red-400 transition-all duration-500" style="width: 100%"></div>
+        </div>
+        <button id="addTimeChipBtn" type="button" title="Spend 1 Chip for +2 Minutes" class="text-[10px] bg-amber-400/20 hover:bg-amber-400/35 text-amber-200 border border-amber-300/40 rounded-full px-2 py-0.5 font-semibold">
+          +2m 🪙
+        </button>
+      </div>
+
+      <!-- Right: Chips + Profile + Logout -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+        <!-- Chip Counter -->
+        <div class="flex items-center gap-1.5 bg-[#021520]/85 border border-amber-400/50 rounded-full px-2.5 py-1 shadow-inner" title="Your Casino Chips">
+          <span class="text-sm">🪙</span>
+          <span id="chipCountDisplay" class="font-bold text-xs sm:text-sm text-amber-300">3</span>
+        </div>
+
+        <!-- Profile Button -->
+        <button id="openProfileBtn" type="button" class="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 border border-white/15 rounded-full pl-1.5 pr-2.5 py-1 transition">
+          <span id="topAvatar" class="text-base sm:text-lg leading-none">🐙</span>
+          <span id="topPlayerName" class="text-xs font-semibold text-white max-w-[72px] sm:max-w-[110px] truncate">Player</span>
+        </button>
+
+        <!-- Logout -->
+        <button id="logoutBtn" type="button" title="Log Out" class="p-2 rounded-xl bg-red-500/20 hover:bg-red-500/35 border border-red-400/35 text-red-200 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6a2 2 0 012 2v1"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- MAIN BODY: SIDEBAR + WORKSPACE + ACE BOT -->
+    <div class="flex-1 flex min-h-0 relative overflow-hidden">
+
+      <!-- Mobile Backdrop for Sidebar Drawer -->
+      <div id="sidebarBackdrop" class="hidden fixed inset-0 bg-black/60 z-30 lg:hidden"></div>
+
+      <!-- SIDEBAR MENU (4 Stations in Strict Colors + Final Jackpot + CROUPIER) -->
+      <aside id="sidebar" class="casino-glass border-y-0 border-l-0 w-64 shrink-0 flex flex-col justify-between p-3 z-40 fixed lg:static inset-y-0 left-0 transform -translate-x-full lg:translate-x-0 transition-transform duration-200">
+        <div class="space-y-2">
+          <div class="flex items-center justify-between px-2 pt-1 pb-2 border-b border-amber-300/20">
+            <span class="font-gold-serif text-xs tracking-widest uppercase">Casino Stations</span>
+            <button id="closeSidebarBtn" type="button" class="lg:hidden text-slate-300 hover:text-white text-lg leading-none">&times;</button>
+          </div>
+
+          <!-- Station 1: Speaking (RED letters) -->
+          <button data-nav="speaking" class="nav-station-btn w-full text-left rounded-2xl p-2.5 bg-[#021520]/70 hover:bg-[#06293d] border border-white/10 transition flex items-center justify-between">
+            <div>
+              <div class="station-speaking-txt font-extrabold text-sm tracking-wide">SPEAKING</div>
+              <div class="text-[11px] text-slate-300">Poker Interview</div>
+            </div>
+            <span id="badge-speaking" class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-white/10 text-amber-200">0/10</span>
+          </button>
+
+          <!-- Station 2: Listening (GRAY letters) -->
+          <button data-nav="listening" class="nav-station-btn w-full text-left rounded-2xl p-2.5 bg-[#021520]/70 hover:bg-[#06293d] border border-white/10 transition flex items-center justify-between">
+            <div>
+              <div class="station-listening-txt font-extrabold text-sm tracking-wide">LISTENING</div>
+              <div class="text-[11px] text-slate-300">Roulette Announcements</div>
+            </div>
+            <span id="badge-listening" class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-white/10 text-amber-200">0/10</span>
+          </button>
+
+          <!-- Station 3: Writing (GREEN letters) -->
+          <button data-nav="writing" class="nav-station-btn w-full text-left rounded-2xl p-2.5 bg-[#021520]/70 hover:bg-[#06293d] border border-white/10 transition flex items-center justify-between">
+            <div>
+              <div class="station-writing-txt font-extrabold text-sm tracking-wide">WRITING</div>
+              <div class="text-[11px] text-slate-300">VIP Mail</div>
+            </div>
+            <span id="badge-writing" class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-white/10 text-amber-200">0/10</span>
+          </button>
+
+          <!-- Station 4: Reading (NAVY BLUE letters on crisp light pearl/gold pill for high legibility) -->
+          <button data-nav="reading" class="nav-station-btn w-full text-left rounded-2xl p-2.5 bg-[#021520]/70 hover:bg-[#06293d] border border-white/10 transition flex items-center justify-between">
+            <div>
+              <span class="station-reading-pill inline-block px-2.5 py-0.5 rounded-lg mb-0.5">
+                <span class="station-reading-txt text-sm tracking-wide">READING</span>
+              </span>
+              <div class="text-[11px] text-slate-300">Blackjack Job Match</div>
+            </div>
+            <span id="badge-reading" class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-white/10 text-amber-200">0/10</span>
+          </button>
+
+          <div class="pt-2 border-t border-amber-300/20">
+            <!-- Final Jackpot -->
+            <button data-nav="final" class="nav-station-btn w-full text-left rounded-2xl p-2.5 bg-gradient-to-r from-amber-500/20 to-yellow-600/10 hover:from-amber-500/30 border border-amber-400/40 transition flex items-center justify-between">
+              <div>
+                <div class="font-gold-serif font-extrabold text-sm tracking-wide">FINAL JACKPOT</div>
+                <div class="text-[11px] text-amber-100/80">Grammar &amp; Vocab (20s)</div>
+              </div>
+              <span id="badge-final" class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-200">0/5</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Bottom Sidebar Controls: Hint + CROUPIER -->
+        <div class="space-y-2 pt-2 border-t border-amber-300/20">
+          <button id="buyHintBtn" type="button" class="w-full rounded-xl py-2 px-3 bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-300/35 text-cyan-100 text-xs font-semibold flex items-center justify-center gap-1.5 transition">
+            <span>💡</span> Buy Ace Hint (1 🪙)
+          </button>
+          <button id="openCroupierBtn" type="button" class="w-full rounded-xl py-2 px-3 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-400/40 text-amber-200 text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-1.5 transition">
+            <span>🎩</span> CROUPIER Admin
+          </button>
+        </div>
+      </aside>
+
+      <!-- CENTER STAGE (Active Station Workspace, Strictly Contained) -->
+      <main class="flex-1 flex flex-col min-w-0 min-h-0 p-2.5 sm:p-3.5 gap-2.5 overflow-hidden">
+
+        <!-- Station Header + Done Button -->
+        <div id="stationHeaderBar" class="casino-glass rounded-2xl px-3.5 py-2 shrink-0 flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-2.5 min-w-0">
+            <span id="activeStationBadge" class="text-xs font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-white/10">HUB</span>
+            <h2 id="activeStationTitle" class="font-gold-serif text-sm sm:text-base truncate">Welcome to the Casino Floor</h2>
+          </div>
+          <div class="flex items-center gap-2">
+            <!-- Mobile Ace Bot Toggle -->
+            <button id="mobileAceBtn" type="button" class="xl:hidden rounded-xl px-2.5 py-1.5 bg-white text-[#061a27] border-2 border-amber-400 text-xs font-extrabold flex items-center gap-1 shadow">
+              <span>A♠</span> Ace Bot
+            </button>
+            <button id="stationDoneBtn" type="button" class="hidden gold-btn rounded-xl px-4 py-1.5 text-xs uppercase tracking-wider">
+              Done ✓
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Workspace Content Area -->
+        <div id="workspaceContent" class="flex-1 min-h-0 flex flex-col overflow-hidden">
+          <!-- Populated dynamically by JS for Hub / Speaking / Listening / Reading / Writing / Final Jackpot -->
+        </div>
+      </main>
+
+      <!-- RIGHT PANEL: THE ACE CARD SCANNER BOT (Desktop Docked, Mobile Modal Drawer) -->
+      <aside id="aceBotPanel" class="hidden xl:flex w-72 shrink-0 flex-col p-3 pl-0 z-30">
+        <div class="casino-glass rounded-3xl flex-1 flex flex-col p-3 gap-2.5 overflow-hidden">
+          <!-- Ace of Spades Character Card -->
+          <div id="aceCardVisual" class="ace-card-shell rounded-2xl p-3 shrink-0 flex flex-col items-center relative">
+            <div class="ace-laser"></div>
+            <div class="w-full flex justify-between items-center text-xs font-black text-[#0b1824]">
+              <span>A♠</span>
+              <span id="aceStatusPill" class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">Ready</span>
+              <span>A♠</span>
+            </div>
+
+            <!-- Animated SVG Ace Face -->
+            <svg viewBox="0 0 100 72" class="w-24 h-16 my-1">
+              <!-- Spade Silhouette -->
+              <path d="M50 6 C32 24 20 36 27 48 C32 55 41 53 45 48 L41 64 L59 64 L55 48 C59 53 68 55 73 48 C80 36 68 24 50 6 Z" fill="#0b1824" />
+              <!-- Glowing Cyan Scanner Eyes -->
+              <g class="ace-eye">
+                <circle cx="41" cy="36" r="4" fill="#00f5d4" />
+                <circle cx="59" cy="36" r="4" fill="#00f5d4" />
+                <circle cx="42" cy="35" r="1.4" fill="#ffffff" />
+                <circle cx="60" cy="35" r="1.4" fill="#ffffff" />
+              </g>
+              <!-- Friendly Smile -->
+              <path d="M43 45 Q50 50 57 45" stroke="#f2c94c" stroke-width="2.2" fill="none" stroke-linecap="round" />
+            </svg>
+
+            <div class="text-center">
+              <div class="font-bold text-xs tracking-wide text-[#0b1824]">ACE SCANNER BOT</div>
+              <div class="text-[10px] text-slate-600">B1+/B2 Coach &amp; Verifier</div>
+            </div>
+          </div>
+
+          <!-- Ace Bot Live Diagnostic Feed -->
+          <div class="flex-1 min-h-0 bg-[#021520]/80 border border-amber-300/25 rounded-2xl p-3 flex flex-col gap-2 overflow-hidden">
+            <div class="text-[10px] uppercase tracking-widest text-amber-300 font-bold flex items-center justify-between">
+              <span>Diagnostic Feedback</span>
+              <span id="aceVerdictBadge" class="hidden px-2 py-0.5 rounded-full text-[9px] font-bold"></span>
+            </div>
+            <div id="aceFeedbackBody" class="thin-scroll flex-1 text-xs leading-relaxed text-cyan-50 space-y-2 pr-1">
+              <p>Welcome to <strong>Jackpot Casino</strong>! Select any of the 4 stations on the left to start your 7-minute timer.</p>
+              <p class="text-cyan-200/80">I will scan your answers, speech, and emails, highlight clues or mistakes, and unlock <em>Choose Next Station</em> when you are ready!</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       OVERLAYS & MODALS (No native alert() or confirm())
+  ========================================================================= -->
+
+  <!-- 1. CHOOSE NEXT STATION GOLDEN OVERLAY -->
+  <div id="nextStationModal" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="casino-glass rounded-3xl w-full max-w-lg p-6 text-center border-2 border-amber-400/70 relative overflow-hidden">
+      <div class="text-3xl mb-1">🏆✨</div>
+      <h2 class="font-gold-display text-2xl sm:text-3xl mb-1">Choose Next Station</h2>
+      <p id="nextStationSubtitle" class="text-xs sm:text-sm text-cyan-100 mb-5">
+        Ace Bot approved your station! Pick your next challenge on the floor.
+      </p>
+
+      <div id="nextStationGrid" class="grid grid-cols-2 gap-3 mb-5">
+        <!-- Populated dynamically -->
+      </div>
+
+      <button id="closeNextStationBtn" type="button" class="text-xs text-slate-300 hover:text-white underline">
+        Stay on Current Station
+      </button>
+    </div>
+  </div>
+
+  <!-- 2. PROFILE EDITOR MODAL (Name + Marine Avatars) -->
+  <div id="profileModal" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="casino-glass rounded-3xl w-full max-w-md p-5 border border-amber-300/45">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="font-gold-serif text-lg">Player Profile</h3>
+        <button id="closeProfileBtn" type="button" class="text-slate-300 hover:text-white text-xl leading-none">&times;</button>
+      </div>
+      <div class="space-y-4">
+        <div>
+          <label class="block text-[11px] uppercase tracking-wider text-amber-200 font-semibold mb-1">Display Name</label>
+          <input id="profileNameInput" type="text" maxlength="24" class="w-full rounded-xl bg-[#021520] border border-amber-300/40 px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-300" />
+        </div>
+        <div>
+          <label class="block text-[11px] uppercase tracking-wider text-amber-200 font-semibold mb-2">Marine Avatar</label>
+          <div id="avatarGrid" class="grid grid-cols-6 gap-2">
+            <!-- Marine icons populated by JS -->
+          </div>
+        </div>
+        <button id="saveProfileBtn" type="button" class="gold-btn w-full rounded-xl py-2.5 text-xs uppercase tracking-wider">
+          Save Profile
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CROUPIER ADMIN MODAL (Passcode: jackpot2026) -->
+  <div id="croupierModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-5">
+    <div class="casino-glass rounded-3xl w-full max-w-4xl max-h-[90dvh] flex flex-col p-4 sm:p-6 border border-amber-400/50 overflow-hidden">
+      <div class="flex items-center justify-between pb-3 border-b border-amber-300/25 shrink-0">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">🎩</span>
+          <div>
+            <h3 class="font-gold-display text-lg sm:text-xl">CROUPIER CONTROL</h3>
+            <p class="text-[11px] text-cyan-200/80">Live Local Device Leaderboard &amp; Facilitator Tools</p>
+          </div>
+        </div>
+        <button id="closeCroupierBtn" type="button" class="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white text-lg leading-none">&times;</button>
+      </div>
+
+      <!-- Passcode Gate -->
+      <div id="croupierAuthBox" class="py-8 flex flex-col items-center justify-center gap-3">
+        <p class="text-xs text-cyan-100">Enter the Croupier access code to unlock the leaderboard:</p>
+        <div class="flex gap-2 w-full max-w-xs">
+          <input id="croupierPassInput" type="password" placeholder="Access code" class="flex-1 rounded-xl bg-[#021520] border border-amber-300/40 px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-300" />
+          <button id="croupierUnlockBtn" type="button" class="gold-btn rounded-xl px-4 py-2 text-xs uppercase">Unlock</button>
+        </div>
+        <p id="croupierAuthErr" class="hidden text-xs text-red-400">Incorrect Croupier code.</p>
+      </div>
+
+      <!-- Unlocked Leaderboard View -->
+      <div id="croupierDashboard" class="hidden flex-1 min-h-0 flex flex-col gap-3 pt-3 overflow-hidden">
+        <div class="flex flex-wrap items-center justify-between gap-2 shrink-0">
+          <div class="text-xs text-cyan-200">
+            Total Registered Players: <strong id="croupierTotalPlayers" class="text-amber-300">0</strong>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="exportCsvBtn" type="button" class="rounded-xl px-3 py-1.5 bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-400/50 text-emerald-100 text-xs font-semibold">
+              ⬇ Export CSV
+            </button>
+            <button id="resetLeaderboardBtn" type="button" class="rounded-xl px-3 py-1.5 bg-red-600/25 hover:bg-red-600/45 border border-red-400/50 text-red-200 text-xs font-semibold">
+              🗑 Reset Local Data
+            </button>
+          </div>
+        </div>
+
+        <!-- Responsive Table Container -->
+        <div class="thin-scroll flex-1 border border-white/10 rounded-2xl bg-[#021520]/80 overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead class="bg-[#062a3e] text-amber-200 uppercase text-[10px] tracking-wider sticky top-0">
+              <tr>
+                <th class="p-2.5">#</th>
+                <th class="p-2.5">Player</th>
+                <th class="p-2.5">Chips</th>
+                <th class="p-2.5 text-red-400">Spk</th>
+                <th class="p-2.5 text-slate-300">Lst</th>
+                <th class="p-2.5 text-emerald-400">Wrt</th>
+                <th class="p-2.5"><span class="bg-[#f7f4e9] text-[#001f54] px-1.5 py-0.5 rounded font-bold">Rdg</span></th>
+                <th class="p-2.5 text-amber-300">Final</th>
+                <th class="p-2.5">Progress</th>
+                <th class="p-2.5 text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody id="croupierTableBody" class="divide-y divide-white/10">
+              <!-- Populated dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. MOBILE ACE BOT MODAL (Only for < xl screens) -->
+  <div id="mobileAceModal" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 xl:hidden">
+    <div class="casino-glass rounded-3xl w-full max-w-sm p-4 border border-amber-400/50 flex flex-col gap-3 max-h-[82dvh]">
+      <div class="flex items-center justify-between">
+        <span class="font-gold-serif text-sm">A♠ ACE SCANNER BOT</span>
+        <button id="closeMobileAceBtn" type="button" class="text-slate-300 hover:text-white text-xl leading-none">&times;</button>
+      </div>
+      <div id="mobileAceFeedback" class="thin-scroll text-xs leading-relaxed text-cyan-50 bg-[#021520]/85 rounded-2xl p-3 border border-amber-300/25 space-y-2"></div>
+      <button id="closeMobileAceOkBtn" type="button" class="gold-btn rounded-xl py-2 text-xs uppercase">Got It</button>
+    </div>
+  </div>
+
+  <!-- 5. CUSTOM CONFIRMATION / MESSAGE MODAL (Replaces alert/confirm) -->
+  <div id="dialogModal" class="hidden fixed inset-0 z-[70] bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="casino-glass rounded-2xl w-full max-w-sm p-5 border border-amber-300/45 text-center space-y-3">
+      <h4 id="dialogTitle" class="font-gold-serif text-base">Notice</h4>
+      <p id="dialogMessage" class="text-xs text-cyan-100 leading-relaxed"></p>
+      <div id="dialogActions" class="flex justify-center gap-2 pt-1"></div>
+    </div>
+  </div>
+
+  <!-- Toast Banner -->
+  <div id="toastBanner" class="hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-[80] bg-[#031f30] border border-amber-300/60 text-amber-100 px-4 py-2 rounded-full text-xs font-semibold shadow-2xl"></div>
+
+  <!-- =========================================================================
+       APPLICATION JAVASCRIPT ENGINE
+  ========================================================================= -->
+  <script>
+    (() => {
+      'use strict';
+
+      /* -----------------------------------------------------------------------
+         1. COMPLETE B1+/B2 CURRICULUM DATA (All 45 Activities & Answer Keys)
+      ----------------------------------------------------------------------- */
+      const MARINE_AVATARS = ['🐙','🦈','🐬','🐢','🐋','🦀','🪼','🐡','🦞','🐚','🧜‍♀️','🐠'];
+
+      // STATION 1: SPEAKING — Poker Interview (10 Professional Scenarios)
+      const SPEAKING_DATA = [
+        {
+          id: 1,
+          title: 'Refund Negotiation',
+          situation: 'A dissatisfied client is demanding a full refund after a service issue. Politely acknowledge their frustration and negotiate an alternative solution (such as store credit, a partial refund, or a complimentary upgrade).',
+          objective: 'Empathize professionally, explain company limits, and propose a win-win alternative.',
+          keywords: ['understand', 'apologize', 'sorry', 'alternative', 'credit', 'discount', 'upgrade', 'partial', 'solution', 'offer', 'refund', 'value'],
+          hint: 'Use diplomatic B2 phrases like: "I completely understand your frustration, however we would like to offer you a complimentary upgrade or store credit..."'
+        },
+        {
+          id: 2,
+          title: 'Requesting a Deadline Extension',
+          situation: 'Your team will not meet the upcoming project deadline due to unexpected technical issues. Explain the cause clearly to your manager and negotiate a realistic extension.',
+          objective: 'Take responsibility, explain the impact, and propose a concrete new delivery date.',
+          keywords: ['deadline', 'extension', 'delay', 'schedule', 'quality', 'realistic', 'complete', 'propose', 'additional', 'days', 'update', 'manager'],
+          hint: 'Try: "Due to unforeseen technical setbacks, we would like to request a three-day extension to ensure top quality."'
+        },
+        {
+          id: 3,
+          title: 'Supplier Price Increase',
+          situation: 'A key supplier has suddenly raised their prices by 15%. Negotiate better terms, a volume discount, or a phased price increase to protect your budget.',
+          objective: 'Highlight your long-term partnership and propose concrete counter-terms.',
+          keywords: ['price', 'increase', 'discount', 'volume', 'budget', 'partnership', 'terms', 'negotiate', 'phased', 'contract', 'order', 'supplier'],
+          hint: 'Mention loyalty and propose a compromise: "As a long-term partner, could we agree on a 5% phased increase or a volume discount?"'
+        },
+        {
+          id: 4,
+          title: 'Mediating a Workplace Conflict',
+          situation: 'Two colleagues strongly disagree on how to handle an important client account. Mediate the conversation objectively and help them reach a workable compromise.',
+          objective: 'Validate both perspectives, keep the focus on the client, and guide them to agreement.',
+          keywords: ['perspective', 'agree', 'compromise', 'client', 'both', 'solution', 'focus', 'team', 'priority', 'middle', 'together', 'resolve'],
+          hint: 'Use neutral mediation language: "I appreciate both points of view. Let us focus on our shared goal for the client and combine both ideas."'
+        },
+        {
+          id: 5,
+          title: 'Department Budget Cuts',
+          situation: 'Your department’s budget has been reduced by 20%. Discuss with leadership which non-essential expenses to cut while protecting core operations and staff.',
+          objective: 'Prioritize essential operations and justify where cost savings are safest.',
+          keywords: ['budget', 'reduce', 'cut', 'essential', 'priority', 'expenses', 'operations', 'save', 'costs', 'travel', 'protect', 'efficiency'],
+          hint: 'Frame cuts strategically: "To protect core operations, I recommend reducing non-essential travel and renegotiating software subscriptions."'
+        },
+        {
+          id: 6,
+          title: 'Sudden Resignation',
+          situation: 'A team member has resigned unexpectedly in the middle of a busy week. Reassign their urgent tasks fairly among the remaining staff.',
+          objective: 'Communicate calmly, distribute urgent tasks equitably, and offer support.',
+          keywords: ['urgent', 'tasks', 'reassign', 'support', 'fair', 'workload', 'priority', 'temporary', 'cover', 'deadline', 'team', 'help'],
+          hint: 'Be supportive and clear: "To keep our deadlines on track temporarily, could you cover the client calls while I handle the weekly report?"'
+        },
+        {
+          id: 7,
+          title: 'Retaining a Client',
+          situation: 'A long-term client is threatening to cancel their contract due to recent delivery delays. Negotiate revised service conditions to retain their business.',
+          objective: 'Apologize sincerely, present corrective measures, and offer an incentive to stay.',
+          keywords: ['cancel', 'contract', 'apologize', 'delay', 'guarantee', 'revised', 'conditions', 'priority', 'discount', 'relationship', 'retain', 'trust'],
+          hint: 'Rebuild trust: "We deeply value your business. If you stay with us, we will guarantee priority shipping and a 10% loyalty discount."'
+        },
+        {
+          id: 8,
+          title: 'Managing Workload Priorities',
+          situation: 'Your manager keeps assigning extra urgent tasks on top of your full schedule. Diplomatically discuss realistic priorities and negotiate what should be postponed.',
+          objective: 'Stay constructive, show current commitments, and ask which task takes top priority.',
+          keywords: ['priorities', 'workload', 'realistic', 'schedule', 'postpone', 'deadline', 'focus', 'capacity', 'quality', 'urgent', 'happy', 'discuss'],
+          hint: 'Avoid saying "I can\'t". Say: "I would be happy to take this on; however, to maintain quality, which current task should I postpone?"'
+        },
+        {
+          id: 9,
+          title: 'Protecting Confidential Information',
+          situation: 'A colleague from another department asks you to share confidential client data. Politely refuse and explain why it cannot be shared under company policy.',
+          objective: 'Refuse firmly yet politely, cite data privacy policy, and suggest the proper channel.',
+          keywords: ['confidential', 'policy', 'privacy', 'security', 'unable', 'sorry', 'permission', 'authorization', 'compliance', 'data', 'manager', 'channel'],
+          hint: 'Cite compliance politely: "I am afraid I cannot share that data due to our confidentiality policy, but you can request formal authorization from IT."'
+        },
+        {
+          id: 10,
+          title: 'Presentation Equipment Failure',
+          situation: 'The projector and laptop fail 10 minutes before an important client pitch. Coordinate a calm, practical alternative plan with your team.',
+          objective: 'Stay composed, assign immediate backup actions, and keep the client pitch on track.',
+          keywords: ['backup', 'plan', 'alternative', 'projector', 'laptop', 'slides', 'handouts', 'tablet', 'calm', 'client', 'solution', 'ready'],
+          hint: 'Delegate fast: "Let us stay calm. Please email the slides to the client\'s tablet while I print quick summary handouts and start with our key metrics."'
+        }
+      ];
+
+      // STATION 2: LISTENING — Roulette Announcements (10 Audios + 40 MCQs)
+      // IMPORTANT: Scripts are strictly hidden from players and used ONLY for Web Speech fallback.
+      const LISTENING_DATA = [
+        {
+          id: 1,
+          title: 'Emergency Evacuation',
+          driveId: '1geKZa2YMu2hvgLgeJ6ce_wzDvmyR0EfQ',
+          hiddenScript: 'You will hear the announcement once, then you have to answer the questions. Emergency evacuation. Attention all employees. A water leak has been discovered near the electrical room on the ground floor. Please stop working and leave the building through the east emergency exit. Do not use the main entrance or the elevators. Meet your team leader in the parking area across the street. Do not return to the building until the safety officer gives permission.',
+          hint: 'Listen carefully for the exact cause near the electrical room, which exit is safe, and who gives permission to return.',
+          questions: [
+            { q: '1. Why must employees leave the building?', opts: ['A. A water leak has been discovered near the electrical room.', 'B. The parking area is closed.', 'C. The main entrance is being repaired.'], ans: 0 },
+            { q: '2. Which exit should employees use?', opts: ['A. The main entrance.', 'B. The east emergency exit.', 'C. The elevators.'], ans: 1 },
+            { q: '3. Where should employees meet their team leader?', opts: ['A. Near the electrical room.', 'B. Inside the main entrance.', 'C. In the parking area across the street.'], ans: 2 },
+            { q: '4. When can employees return to the building?', opts: ['A. When the safety officer gives permission.', 'B. As soon as they meet their team leader.', 'C. When they have collected their belongings.'], ans: 0 }
+          ]
+        },
+        {
+          id: 2,
+          title: 'Suspicious Email',
+          driveId: '1fewar2rhf5BFK9gPu3rFSh5LogeZ2kdi',
+          hiddenScript: 'You will hear the announcement once, then you have to answer the questions. Suspicious email. This is an important message from the IT department. Some employees have received an email asking them to confirm their company password. The message appears to come from human resources, but it is not genuine. Do not click the link or reply. Report the email using the security button in your inbox. If you have already entered your password, call the IT help desk immediately.',
+          hint: 'Distinguish between who SENT the warning (IT) and who the fake email PRETENDS to be from.',
+          questions: [
+            { q: '1. What does the suspicious email ask employees to do?', opts: ['A. Confirm their holiday dates.', 'B. Confirm their company password.', 'C. Update their telephone number.'], ans: 1 },
+            { q: '2. Which department does the email appear to come from?', opts: ['A. The IT department.', 'B. The finance department.', 'C. Human Resources.'], ans: 2 },
+            { q: '3. How should employees report the suspicious email?', opts: ['A. Use the security button in their inbox.', 'B. Reply directly to the message.', 'C. Forward their password to Human Resources.'], ans: 0 },
+            { q: '4. What should employees do if they have already entered their password?', opts: ['A. Wait for another email.', 'B. Call the IT help desk immediately.', 'C. Click the link again.'], ans: 1 }
+          ]
+        },
+        {
+          id: 3,
+          title: 'Delayed Delivery',
+          driveId: '1wDYOnp1vgVBlqlhBGhDHwKRWaStFrYJw',
+          hiddenScript: 'You will hear the dialogue once, then you have to answer the questions. Delayed delivery. Hello, Maria. I am calling about your order of office chairs. Unfortunately, our truck has broken down. We cannot deliver the full order before Friday. Friday is too late. Our training event starts on Thursday, and we need at least 10 chairs. We can send 10 chairs tomorrow using another delivery company. The remaining 20 would arrive on Friday. Will there be an additional delivery charge? No, we will cover the extra cost. All right. Please confirm that arrangement by email.',
+          hint: 'Pay attention to the split numbers (10 vs. 20) and who agrees to cover the extra shipping fee.',
+          questions: [
+            { q: '1. Why is the delivery delayed?', opts: ['A. The manager changed the order.', 'B. The chairs are unavailable.', "C. The supplier's truck has broken down."], ans: 2 },
+            { q: '2. Why does the manager need at least ten chairs before Friday?', opts: ['A. A training event starts on Thursday.', 'B. A new office opens on Friday.', 'C. Another supplier will collect them on Thursday.'], ans: 0 },
+            { q: '3. What delivery arrangement do they agree on?', opts: ['A. Twenty chairs tomorrow and ten on Friday.', 'B. Ten chairs tomorrow and twenty on Friday.', 'C. All thirty chairs on Friday.'], ans: 1 },
+            { q: '4. Who will pay the extra delivery cost?', opts: ["A. The manager's company.", 'B. The training participants.', 'C. The supplier.'], ans: 2 }
+          ]
+        },
+        {
+          id: 4,
+          title: 'Changing Work Priorities',
+          driveId: '1ieF8FTGly41QUqu_A8QDnmDnKUwXOJBv',
+          hiddenScript: 'You will hear the announcement once, then you have to answer the questions. Changing work priorities. Good morning, team. Our biggest client has requested the sales proposal one day earlier than expected. Please make the proposal your first priority today. The internal training report can wait until Friday. Daniel will check the prices and Sofia will review the delivery dates. Send your completed sections to me by 2 this afternoon. If another task prevents you from meeting that deadline, contact me before noon.',
+          hint: 'Keep track of the two team members (Daniel vs. Sofia) and the two times mentioned (2 p.m. vs. noon).',
+          questions: [
+            { q: '1. Why has the sales proposal become the first priority?', opts: ['A. The client requested it one day earlier than expected.', 'B. The team has already completed the training report.', 'C. The original proposal contained incorrect prices.'], ans: 0 },
+            { q: '2. Which task can wait until Friday?', opts: ["A. Checking the proposal's prices.", 'B. The internal training report.', 'C. Reviewing the delivery dates.'], ans: 1 },
+            { q: '3. What is Sofia responsible for?', opts: ['A. Preparing the training report.', 'B. Checking the prices.', 'C. Reviewing the delivery dates.'], ans: 2 },
+            { q: '4. When must team members send their completed sections?', opts: ['A. By two this afternoon.', 'B. Before noon tomorrow.', 'C. By Friday afternoon.'], ans: 0 }
+          ]
+        },
+        {
+          id: 5,
+          title: 'Rescheduling a Negotiation',
+          driveId: '151e7tMp4NMwtZPpfViyWqysvVsQysKIH',
+          hiddenScript: 'You will hear the dialogue once, then you have to answer the questions. Rescheduling a negotiation. Hello, Mr. Brown. I am calling about tomorrow\'s contract meeting. Our director\'s flight has been delayed, so she cannot attend at 9:00. I am available at 11:00, but I have another appointment at noon. We could meet online at 11 or in person at 3:00. Let\'s meet online at 11:00. We should focus on the payment terms and discuss the delivery schedule another day. Certainly, I will send you a new invitation and a shorter agenda.',
+          hint: 'Listen for the final option they AGREE on (not all options mentioned) and what the assistant promises to send.',
+          questions: [
+            { q: '1. Why can the director not attend the original meeting?', opts: ['A. She has another appointment at noon.', 'B. Her flight has been delayed.', 'C. She has not received the contract.'], ans: 1 },
+            { q: '2. What arrangement do they agree on?', opts: ['A. An in-person meeting at nine.', 'B. An in-person meeting at three.', 'C. An online meeting at eleven.'], ans: 2 },
+            { q: '3. What will they focus on during the rescheduled meeting?', opts: ['A. The payment terms.', 'B. The delivery schedule.', "C. The director's travel arrangements."], ans: 0 },
+            { q: '4. What will the assistant send?', opts: ['A. A signed contract and a payment receipt.', 'B. A new invitation and a shorter agenda.', 'C. A flight confirmation and a delivery schedule.'], ans: 1 }
+          ]
+        },
+        {
+          id: 6,
+          title: 'Equipment Failure',
+          driveId: '1xfTt7Sq8sfJDrDiMDzpRufTiL9sN9wBi',
+          hiddenScript: 'You will hear the announcement once, then you have to answer the questions. Equipment failure. Attention production team. Packaging machine 2 is producing damaged boxes. Stop using that machine immediately and leave the affected boxes in the inspection area. Maintenance staff are on their way. Machine one can continue operating, but customer orders due today must be packaged first. Team leaders should report any expected delays to the operations manager before 10:30. Do not restart machine 2 without maintenance approval.',
+          hint: 'Notice the difference between Machine 1 and Machine 2, and where damaged boxes must be placed.',
+          questions: [
+            { q: '1. What problem has been identified?', opts: ['A. Machine One has stopped operating.', 'B. Customer orders have been cancelled.', 'C. Packaging Machine Two is producing damaged boxes.'], ans: 2 },
+            { q: '2. Where should employees leave the affected boxes?', opts: ['A. In the inspection area.', 'B. Beside the customer orders ready for delivery.', "C. In the operations manager's office."], ans: 0 },
+            { q: '3. Which orders must be packaged first?', opts: ['A. Orders received before ten thirty.', 'B. Customer orders due today.', 'C. Orders assigned to Machine Two yesterday.'], ans: 1 },
+            { q: '4. What is required before Machine Two can restart?', opts: ['A. Permission from a customer.', 'B. Completion of every order.', 'C. Approval from maintenance.'], ans: 2 }
+          ]
+        },
+        {
+          id: 7,
+          title: 'A Client Changes an Order',
+          driveId: '1dgEVpM-rQEYG66LpReg03J87cilM3FpH',
+          hiddenScript: 'You will hear the voicemail once, then you have to answer the questions. A client changes an order. Hello, Alex. This is Rachel from Green Market. I am calling about our order for next week\'s exhibition. We need to increase the number of printed brochures from 300 to 500. However, our budget can only increase by 10%. Could you check whether a simpler paper option would keep the order within budget? Please call me before 3 today. Do not begin printing until we approve the updated price.',
+          hint: 'Focus on the NEW quantity of brochures, the percentage cap on budget, and the condition before printing starts.',
+          questions: [
+            { q: '1. How many brochures does Rachel need now?', opts: ['A. Five hundred.', 'B. Three hundred.', 'C. Eight hundred.'], ans: 0 },
+            { q: '2. By how much can the budget increase?', opts: ['A. Five percent.', 'B. Ten percent.', 'C. Twenty percent.'], ans: 1 },
+            { q: '3. What does Rachel suggest to help keep the order within budget?', opts: ['A. Reducing the number of brochures.', 'B. Cancelling the exhibition.', 'C. Using a simpler paper option.'], ans: 2 },
+            { q: '4. What must happen before printing begins?', opts: ['A. Rachel must approve the updated price.', 'B. Alex must print the original three hundred brochures.', 'C. The exhibition must begin.'], ans: 0 }
+          ]
+        },
+        {
+          id: 8,
+          title: 'Unexpected Staff Absence',
+          driveId: '1UzN9WL20C1eQytrRMkBjW_SRDMSGWQ_U',
+          hiddenScript: 'You will hear the dialogue once, then you have to answer the questions. Unexpected staff absence. Luis has called in sick, so we need to adjust today\'s responsibilities. I can cover reception this morning, but I am leading the new employee orientation at 1:00. Thank you, Emma. Cover reception until 12:30. I will ask Ben to take over after lunch. Who will prepare the visitor badges? Luis usually does that. I will prepare them. Please focus on welcoming visitors and answering calls. All right, that gives me time to prepare for the orientation.',
+          hint: 'Track the three staff members (Luis, Emma, Ben) plus the supervisor speaking.',
+          questions: [
+            { q: "1. Why does the supervisor need to change the team's responsibilities?", opts: ['A. Ben is attending a course.', 'B. Luis has called in sick.', 'C. Emma is leaving the company.'], ans: 1 },
+            { q: '2. Until what time will Emma cover reception?', opts: ['A. One o\'clock.', 'B. Two o\'clock.', 'C. Twelve thirty.'], ans: 2 },
+            { q: '3. What is Emma doing at one o\'clock?', opts: ['A. Leading the new employee orientation.', 'B. Preparing the visitor badges.', 'C. Taking over reception from Ben.'], ans: 0 },
+            { q: '4. Who will prepare the visitor badges?', opts: ['A. Ben.', 'B. The supervisor.', 'C. Emma.'], ans: 1 }
+          ]
+        },
+        {
+          id: 9,
+          title: 'Missing Access Badge',
+          driveId: '11324zXMmjZk4hRM-PqmzG80mf5VBWO5Y',
+          hiddenScript: 'You will hear the dialogue once, then you have to answer the questions. Missing access badge. Good morning. I cannot find my access badge and I have a meeting upstairs in 20 minutes. When did you last use it? Yesterday afternoon. I may have lost it on the bus. I will deactivate it now. Please show me another form of identification so I can issue a temporary badge. Can I use the temporary badge all week? No, it is only valid today. Contact human resources to request a replacement.',
+          hint: 'Listen for the exact location the employee suspects, what security requires, and how long the temporary pass lasts.',
+          questions: [
+            { q: '1. Where does the employee think the badge may have been lost?', opts: ['A. In the meeting room.', 'B. At the reception desk.', 'C. On the bus.'], ans: 2 },
+            { q: '2. What will the security officer do to the original badge?', opts: ['A. Deactivate it.', 'B. Renew it for another week.', 'C. Give it to Human Resources.'], ans: 0 },
+            { q: '3. What must the employee show to receive a temporary badge?', opts: ['A. A meeting invitation.', 'B. Another form of identification.', 'C. A replacement request from Human Resources.'], ans: 1 },
+            { q: '4. How long is the temporary badge valid?', opts: ['A. All week.', 'B. For twenty minutes.', 'C. Only today.'], ans: 2 }
+          ]
+        },
+        {
+          id: 10,
+          title: 'Unexpected Office Closure',
+          driveId: '1DCbfz7mw5VdH2la9SMNUwQmkxUy6OknN',
+          hiddenScript: 'You will hear the announcement once, then you have to answer the questions. Unexpected office closure. This is a message for all staff. Our office will remain closed tomorrow because of urgent building repairs. Employees who have company laptops should work from home. If your equipment is still in the office, contact your supervisor today to arrange an alternative task. Do not enter the building tomorrow. Client appointments should be moved online where possible. We will send an update by 4 tomorrow afternoon about the following day.',
+          hint: 'Listen for instructions for employees WITHOUT laptops at home and the exact time of tomorrow\'s update.',
+          questions: [
+            { q: '1. Why will the office remain closed tomorrow?', opts: ['A. Urgent building repairs are needed.', 'B. All employees are attending a conference.', 'C. The company is moving to another office.'], ans: 0 },
+            { q: '2. What should employees do if their equipment is still in the office?', opts: ['A. Enter the building tomorrow to collect it.', 'B. Contact their supervisor today to arrange an alternative task.', 'C. Wait until the office reopens before contacting anyone.'], ans: 1 },
+            { q: '3. What should happen to client appointments where possible?', opts: ['A. They should be cancelled permanently.', 'B. They should take place inside the closed office.', 'C. They should be moved online.'], ans: 2 },
+            { q: '4. When will staff receive an update about the following day?', opts: ['A. By four tomorrow afternoon.', 'B. Before the office closes today.', 'C. Tomorrow morning before work begins.'], ans: 0 }
+          ]
+        }
+      ];
+
+      // STATION 3: READING — Blackjack Job Match (All 10 Exact Texts + 30 MCQs)
+      const READING_DATA = [
+        {
+          id: 1,
+          title: 'Supplier Offers',
+          instruction: 'Read the purchasing report and answer the questions.',
+          text: `The purchasing department needs 40 office chairs before a training program begins on June 18. Two suppliers have submitted offers.\n\nOfficePro charges $75 per chair and offers free delivery within ten working days. Its chairs have a two-year warranty. However, the supplier cannot guarantee delivery before June 20.\n\nWorkSpace charges $80 per chair, plus a $100 delivery fee. It guarantees delivery by June 16 and provides a three-year warranty. WorkSpace also offers free replacement of damaged items reported within 48 hours of delivery.\n\nThe purchasing manager has a maximum budget of $3,400. Both offers are within the budget, but having the chairs ready before the training program is essential.`,
+          hint: 'Calculate WorkSpace total: 40 × $80 + $100 = $3,300 (under $3,400) AND delivered by June 16.',
+          questions: [
+            { q: "1. What is the purchasing department's main priority?", opts: ['A. Buying chairs with the lowest possible price.', 'B. Receiving the chairs before the training program.', 'C. Avoiding all delivery charges.'], ans: 1 },
+            { q: '2. What advantage does OfficePro offer?', opts: ['A. A lower price per chair and free delivery.', 'B. A longer warranty than WorkSpace.', 'C. Guaranteed delivery by June 16.'], ans: 0 },
+            { q: "3. Why does WorkSpace meet the department's requirements?", opts: ['A. It offers the cheapest chairs.', 'B. It allows damaged items to be reported at any time.', 'C. It guarantees delivery before training and stays within budget.'], ans: 2 }
+          ]
+        },
+        {
+          id: 2,
+          title: 'An Urgent Customer Complaint',
+          instruction: 'Read the complaint email and answer the questions.',
+          text: `Subject: Urgent problem with tomorrow's conference equipment\n\nDear Customer Service Team,\n\nOur conference begins tomorrow at 8:00 a.m., but the equipment delivered this afternoon does not match our order.\n\nWe ordered two projectors and four wireless microphones. We received both projectors, but neither of them turns on. We tested them using different power sockets. The microphones work correctly, although one has a small mark on its case.\n\nWe need working projectors to display the speakers' presentations to 120 guests. Please arrange replacements by 7:00 a.m. tomorrow so our technicians have time to test them.\n\nThe mark on the microphone is not urgent. Our immediate concern is the faulty projectors. Please confirm your solution by 5:00 p.m. today.\n\nRegards,\nLaura Mendes — Conference Coordinator`,
+          hint: 'Look at the final two paragraphs: distinguish between what is NOT urgent vs. the immediate concern and deadlines.',
+          questions: [
+            { q: '1. What is the most urgent problem?', opts: ['A. One microphone has a mark on its case.', 'B. The customer received too many microphones.', 'C. Neither projector works.'], ans: 2 },
+            { q: '2. Why must the replacements arrive by 7:00 a.m.?', opts: ['A. The technicians need time to test them.', 'B. The conference finishes at 8:00 a.m.', 'C. The speakers arrive at 5:00 p.m.'], ans: 0 },
+            { q: '3. What does Laura request by 5:00 p.m. today?', opts: ['A. A refund for all the equipment.', 'B. Confirmation of the proposed solution.', 'C. Replacement of the marked microphone.'], ans: 1 }
+          ]
+        },
+        {
+          id: 3,
+          title: 'Refund Policy',
+          instruction: 'Read the policy and customer case. Answer the questions.',
+          text: `BrightTech allows customers to return unused products within 30 calendar days of delivery. Customers must provide proof of purchase, and all original accessories must be included.\n\nFaulty products reported within the same 30-day period qualify for a full refund or replacement, even if the packaging has been opened. A technician must confirm the fault first.\n\nProducts damaged through misuse do not qualify for a refund. Delivery charges are refunded only when the product is confirmed to be faulty.\n\nCustomer case:\nMs. Rivera received a printer 18 days ago. It has never printed correctly. She has the receipt and all the accessories, but she has already opened the packaging. A company technician has confirmed a manufacturing fault.`,
+          hint: 'Match Ms. Rivera\'s facts (18 days, confirmed manufacturing fault) against the second and third paragraphs.',
+          questions: [
+            { q: '1. What options are available to Ms. Rivera?', opts: ['A. A repair only.', 'B. A full refund or replacement.', 'C. Store credit without a delivery refund.'], ans: 1 },
+            { q: '2. Why does the opened packaging not prevent her return?', opts: ['A. Packaging is never required for any return.', 'B. She reported the problem after 30 days.', 'C. The product has a confirmed fault reported within 30 days.'], ans: 2 },
+            { q: '3. What does the policy say about her delivery charges?', opts: ['A. They should be refunded because the printer is faulty.', 'B. They cannot be refunded under any circumstances.', 'C. They can only be refunded if she accepts a replacement.'], ans: 0 }
+          ]
+        },
+        {
+          id: 4,
+          title: 'A Temporary Team Leader',
+          instruction: 'Read the staffing report and answer the questions.',
+          text: `The customer-support manager will be away for three weeks. A temporary team leader must organize daily schedules, handle difficult complaints, and attend morning planning meetings.\n\nAna has worked in customer support for four years. She has trained new employees and regularly handles serious complaints. She is available throughout the three-week period, but she has limited experience preparing monthly budgets.\n\nBruno has six years of experience in financial administration. He is excellent at budget planning, but he has never supervised customer-support staff. He is also attending an external course every morning during the manager's absence.\n\nThe temporary position does not include budget preparation. The director wants someone who can manage daily customer-support operations without changing the morning meeting schedule.`,
+          hint: 'Notice that budget preparation is NOT part of the temporary role, while morning availability IS essential.',
+          questions: [
+            { q: '1. Which responsibility belongs to the temporary role?', opts: ['A. Preparing the annual financial budget.', 'B. Teaching an external morning course.', 'C. Organizing daily staff schedules.'], ans: 2 },
+            { q: '2. Why is Ana better suited to the immediate requirements?', opts: ['A. She has relevant experience and is available for the full period.', 'B. She has more financial experience than Bruno.', 'C. She can cancel the morning planning meetings.'], ans: 0 },
+            { q: "3. What limits Bruno's suitability?", opts: ['A. He has never worked in an office.', 'B. He lacks customer-support supervision experience and has morning commitments.', 'C. He is unavailable for the entire three weeks.'], ans: 1 }
+          ]
+        },
+        {
+          id: 5,
+          title: 'A Project Delay',
+          instruction: 'Read the project update and answer the questions.',
+          text: `Subject: Website launch update\n\nThe new company website was scheduled to launch on September 12. The design team completed its work on September 4, and the technical team finished testing the payment system on September 6.\n\nHowever, the client did not approve the final product descriptions until September 10, four days later than agreed. The content team could not upload the descriptions before receiving that approval.\n\nUploading the approved content requires two working days. A final quality check requires one additional day after uploading is complete.\n\nThe project manager has moved the launch to September 15. No extra design work is required, and the payment system does not need further testing. The team will use the additional time to complete the content upload and final check.`,
+          hint: 'Check the timeline: Sept 4 & 6 were done on time; Sept 10 was four days late.',
+          questions: [
+            { q: '1. What caused the delay?', opts: ['A. The design team missed its deadline.', 'B. The client approved the descriptions late.', 'C. The payment system failed its tests.'], ans: 1 },
+            { q: '2. What must happen immediately after the content is uploaded?', opts: ['A. A final quality check.', 'B. A new website design.', 'C. Another client meeting about prices.'], ans: 0 },
+            { q: '3. What work has already been completed?', opts: ['A. The content upload and final quality check.', 'B. All tasks required for launch.', 'C. The design and payment-system testing.'], ans: 2 }
+          ]
+        },
+        {
+          id: 6,
+          title: 'Delivery Contract Conditions',
+          instruction: 'Read the contract summary and answer the questions.',
+          text: `A medical-equipment company is comparing two delivery contracts for packages that must arrive before clinics open at 9:00 a.m.\n\nContract A costs $12 per package. Deliveries take place between 8:00 a.m. and 6:00 p.m., with no guaranteed arrival time. Tracking is included, but compensation for loss is limited to $100 per package.\n\nContract B costs $18 per package and guarantees delivery before 8:30 a.m. on working days. It includes tracking and requires a recipient's signature. Compensation for loss is available up to $500 per package.\n\nUnder Contract B, the delivery charge is refunded if a package arrives late, except when severe weather causes the delay. Neither contract includes weekend delivery.`,
+          hint: 'Compare what BOTH contracts share vs. the unique exception in the last paragraph.',
+          questions: [
+            { q: '1. Which feature makes Contract B more suitable for these deliveries?', opts: ['A. It guarantees arrival before the clinics open.', 'B. It includes free weekend delivery.', 'C. It does not require anyone to receive the package.'], ans: 0 },
+            { q: '2. What do both contracts include?', opts: ['A. The same level of compensation.', 'B. Tracking.', 'C. Guaranteed morning arrival.'], ans: 1 },
+            { q: "3. When would Contract B's late-delivery refund not apply?", opts: ['A. When a recipient signs for the package.', 'B. When the package arrives on a working day.', 'C. When severe weather causes the delay.'], ans: 2 }
+          ]
+        },
+        {
+          id: 7,
+          title: 'A Workplace Safety Report',
+          instruction: 'Read the safety report and answer the questions.',
+          text: `During this morning's inspection, the safety officer recorded three problems.\n\nFirst, several empty boxes are blocking the warehouse emergency exit. The warehouse is operating normally, and 25 employees are currently working inside.\n\nSecond, a chair in an unused meeting room has a loose wheel. The room has been locked, and a warning notice has been placed on the door.\n\nThird, a light in the staff kitchen is not working. Another light provides enough visibility, and maintenance has scheduled a replacement for this afternoon.\n\nThe safety officer has instructed the warehouse supervisor to clear the emergency exit immediately. The damaged chair must be repaired before the meeting room is reopened. The kitchen repair can continue as scheduled.`,
+          hint: 'Look at which hazard affects 25 active workers right now versus which room is safely locked.',
+          questions: [
+            { q: '1. Which problem requires immediate action?', opts: ['A. The broken kitchen light.', 'B. The loose wheel on the chair.', 'C. The blocked emergency exit.'], ans: 2 },
+            { q: '2. Why is the damaged chair not the first priority?', opts: ['A. The room is locked, preventing people from using it.', 'B. The chair has already been repaired.', 'C. Employees have agreed to use it carefully.'], ans: 0 },
+            { q: '3. What must happen before the meeting room reopens?', opts: ['A. The kitchen light must be replaced.', 'B. The damaged chair must be repaired.', 'C. All warehouse employees must leave.'], ans: 1 }
+          ]
+        },
+        {
+          id: 8,
+          title: 'A Training Budget',
+          instruction: 'Read the proposal report and answer the questions.',
+          text: `The HR department has $2,000 to organize communication training for 20 employees. The training must include practical activities and take place before the end of the month.\n\nProposal A offers an in-person workshop for $1,800. Materials cost an additional $300. The trainer is available next week.\n\nProposal B offers two live online sessions for a total of $1,600. Digital materials and role-play activities are included. Both sessions can take place this month.\n\nProposal C offers a recorded course for $900, including materials. However, it contains only video lectures and quizzes, with no practical communication activities.\n\nThe HR manager cannot request extra funding. All 20 employees have access to computers and a stable internet connection.`,
+          hint: 'Check all 3 criteria: budget <= $2,000, includes practical activities, and happens this month.',
+          questions: [
+            { q: '1. Why does Proposal A exceed the budget?', opts: ['A. Its total cost includes an additional materials fee.', 'B. Each employee must pay $1,800.', 'C. The trainer charges extra for online access.'], ans: 0 },
+            { q: '2. Which proposal meets all the stated requirements?', opts: ['A. Proposal A.', 'B. Proposal C.', 'C. Proposal B.'], ans: 2 },
+            { q: '3. Why does Proposal C fail to meet the requirements?', opts: ['A. It is unavailable this month.', 'B. It does not include practical communication activities.', 'C. It costs more than the available budget.'], ans: 1 }
+          ]
+        },
+        {
+          id: 9,
+          title: 'Meeting Minutes',
+          instruction: 'Read the meeting minutes and answer the questions.',
+          text: `Project: Regional Trade Fair — Meeting date: October 3\n\nThe team agreed on the following responsibilities:\n\nMarta will confirm the exhibition space with the event organizer by October 6. She must receive written confirmation before the team orders any display materials.\n\nDavid will request three printing quotations by October 8. He should compare prices and delivery times, but he must not place an order yet.\n\nLeila will prepare the first brochure draft by October 9. The sales manager will review it on October 10.\n\nThe team will meet again on October 11 to approve the final brochure and select a printing supplier. Printing can begin only after that approval. Any expected delay must be reported to the project coordinator immediately.`,
+          hint: 'Match each name (Marta, David, Leila) to their exact action and check the final paragraph for when printing starts.',
+          questions: [
+            { q: '1. Who must confirm the exhibition space?', opts: ['A. Marta.', 'B. David.', 'C. Leila.'], ans: 0 },
+            { q: '2. What must David complete by October 8?', opts: ['A. Print the final brochures.', 'B. Request three printing quotations.', 'C. Approve the exhibition space.'], ans: 1 },
+            { q: '3. When can printing begin?', opts: ['A. As soon as Leila finishes the first draft.', 'B. Immediately after David receives one quotation.', 'C. After the team approves the brochure and supplier.'], ans: 2 }
+          ]
+        },
+        {
+          id: 10,
+          title: 'A Cancellation Clause',
+          instruction: 'Read the cancellation clause and customer case. Answer the questions.',
+          text: `A conference venue requires all cancellation requests in writing.\n\nCancellations received at least 15 calendar days before the event receive a full refund, minus a $50 administration fee. Cancellations received between 7 and 14 calendar days before the event receive a 50% refund. Cancellations received fewer than 7 calendar days before the event receive no refund.\n\nHowever, customers may transfer the booking to another available date within three months. One date change is permitted at no additional charge.\n\nCustomer case:\nA company has an event scheduled in five days. Its main speaker is unavailable, so the organizer wants to cancel or postpone. The company has not previously changed the booking and would prefer to avoid losing its payment.`,
+          hint: 'Five days is fewer than 7 days, so check both the refund rule and the free date-transfer option.',
+          questions: [
+            { q: '1. What refund is available if the company cancels now?', opts: ['A. A full refund minus $50.', 'B. No refund.', 'C. A 50% refund.'], ans: 1 },
+            { q: '2. Which option could prevent the company from losing its payment?', opts: ['A. Requesting a new available date within three months.', 'B. Cancelling by telephone on the event day.', 'C. Requesting a full refund after the event.'], ans: 0 },
+            { q: '3. How must the cancellation request be submitted?', opts: ['A. Through the speaker.', 'B. In person only.', 'C. In writing.'], ans: 2 }
+          ]
+        }
+      ];
+
+      // STATION 4: WRITING — VIP Mail (10 Professional Email Scenarios, 60–90 words)
+      const WRITING_DATA = [
+        {
+          id: 1,
+          title: 'Correcting a Pricing Error',
+          to: 'client.purchasing@globalcorp.com',
+          defaultSubject: 'Updated Quotation — Pricing Correction',
+          prompt: 'Write a professional email (60–90 words) correcting a pricing error in a quotation sent yesterday. Apologize for the mistake, state the correct figure, and ask for confirmation.',
+          keywords: ['apologize', 'sorry', 'error', 'mistake', 'price', 'quotation', 'quote', 'correct', 'updated', 'confirm', 'figure'],
+          hint: 'Include: "Dear [Name]," + apologize for the pricing error + state the updated amount + ask them to confirm + "Kind regards, [Your Name]". Aim for 60–90 words.'
+        },
+        {
+          id: 2,
+          title: 'Requesting Missing Shipment Items',
+          to: 'orders@supplylogistics.com',
+          defaultSubject: 'Missing Items from Order #4821',
+          prompt: 'Write a professional email (60–90 words) reporting missing items from a recent shipment. Reference the order number, specify what is missing, and request an urgent delivery date.',
+          keywords: ['order', 'shipment', 'delivery', 'missing', 'items', 'received', 'urgent', 'send', 'confirm', 'dispatch', 'date'],
+          hint: 'Mention the order reference, clearly list the missing units, and request urgent dispatch by a specific date.'
+        },
+        {
+          id: 3,
+          title: 'Requesting Additional Staff',
+          to: 'director.operations@company.com',
+          defaultSubject: 'Request for Additional Project Support',
+          prompt: 'Write a professional email (60–90 words) to your manager requesting additional staff for an upcoming project. Justify the workload and specify the roles and dates needed.',
+          keywords: ['project', 'staff', 'support', 'team', 'workload', 'deadline', 'additional', 'role', 'dates', 'request', 'assistance'],
+          hint: 'Explain why current capacity is stretched, specify how many people/roles are needed, and state the exact timeframe.'
+        },
+        {
+          id: 4,
+          title: 'Polite Overdue Payment Reminder',
+          to: 'accounts@clientpartner.com',
+          defaultSubject: 'Friendly Reminder: Overdue Invoice #1094',
+          prompt: 'Write a polite payment reminder email (60–90 words). Reference the invoice number and original due date, and politely ask for payment confirmation or an update.',
+          keywords: ['invoice', 'payment', 'reminder', 'due', 'overdue', 'balance', 'account', 'confirm', 'transfer', 'update', 'settled'],
+          hint: 'Keep a courteous B2 tone: "I am writing to gently remind you that Invoice #1094 was due on..." and note "If payment has already been made, please disregard."'
+        },
+        {
+          id: 5,
+          title: 'Service Interruption Notice',
+          to: 'all.clients@vipservice.com',
+          defaultSubject: 'Important Notice: Temporary Service Interruption',
+          prompt: 'Write an email (60–90 words) informing clients about an unexpected or planned service interruption. Explain the cause, provide the expected resolution time, and apologize for the inconvenience.',
+          keywords: ['service', 'interruption', 'maintenance', 'technical', 'apologize', 'inconvenience', 'resolved', 'restored', 'time', 'update', 'temporary'],
+          hint: 'State the issue clearly, give an estimated restoration time, and thank clients for their patience.'
+        },
+        {
+          id: 6,
+          title: 'Proposing a Compromise Offer',
+          to: 'negotiations@prospectltd.com',
+          defaultSubject: 'Revised Proposal & Flexible Terms',
+          prompt: 'Write an email (60–90 words) proposing a compromise after a client rejected your initial offer. Acknowledge their feedback and present revised terms that benefit both sides.',
+          keywords: ['feedback', 'proposal', 'offer', 'revised', 'compromise', 'terms', 'discount', 'agreement', 'flexible', 'discuss', 'mutual'],
+          hint: 'Thank them for their candid feedback, adjust one key term (price or timeline), and invite a brief call to finalize.'
+        },
+        {
+          id: 7,
+          title: 'Reporting Incorrect Figures',
+          to: 'finance.lead@company.com',
+          defaultSubject: 'Correction Needed: Q3 Sales Report Figures',
+          prompt: 'Write an email (60–90 words) reporting incorrect figures you discovered in a financial/sales report. Highlight the discrepancy and suggest correcting it before the upcoming meeting.',
+          keywords: ['report', 'figures', 'numbers', 'incorrect', 'discrepancy', 'error', 'correct', 'meeting', 'review', 'updated', 'attached'],
+          hint: 'Be concise and constructive: point out the exact section with the discrepancy and offer to send the corrected table before the meeting.'
+        },
+        {
+          id: 8,
+          title: 'Business Travel Booking Error',
+          to: 'corporate.desk@travelagency.com',
+          defaultSubject: 'Urgent Correction: Business Trip Booking #TR-77',
+          prompt: 'Write an email (60–90 words) to resolve an error in a business travel reservation (wrong flight dates or hotel check-in). Explain the error and request urgent confirmation of the fix.',
+          keywords: ['booking', 'reservation', 'hotel', 'flight', 'dates', 'error', 'incorrect', 'change', 'urgent', 'confirm', 'itinerary'],
+          hint: 'State the booking reference, contrast the incorrect date with the correct date, and request an updated itinerary today.'
+        },
+        {
+          id: 9,
+          title: 'Clarifying Contracted Service Limits',
+          to: 'client.manager@enterprise.com',
+          defaultSubject: 'Clarification of Service Agreement Scope',
+          prompt: 'Write a diplomatic email (60–90 words) explaining the limits of a contracted service to a client who requested extra work. Politely state what is included and offer a paid add-on option.',
+          keywords: ['contract', 'agreement', 'scope', 'included', 'additional', 'service', 'option', 'fee', 'package', 'happy', 'clarify'],
+          hint: 'Stay positive: confirm what their current plan covers, then offer a clear quote for the additional requested service.'
+        },
+        {
+          id: 10,
+          title: 'Preventing a Recurring Error',
+          to: 'operations.team@company.com',
+          defaultSubject: 'Proposal to Prevent Recurring Order Errors',
+          prompt: 'Write an email (60–90 words) proposing a practical preventive solution to avoid a recurring team/process error. Identify the issue and propose concrete steps.',
+          keywords: ['recurring', 'error', 'issue', 'process', 'prevent', 'checklist', 'solution', 'propose', 'steps', 'review', 'quality'],
+          hint: 'Identify the recurring bottleneck without blaming individuals, and propose a concrete 2-step checklist or double-check routine.'
+        }
+      ];
+
+      // FINAL JACKPOT: Grammar & Vocabulary Challenge (5 Exact Timed Challenges, 20s each)
+      const FINAL_CHALLENGES = [
+        {
+          id: 1,
+          title: 'Challenge 1: Requesting a Discount',
+          instruction: 'Complete the sentence with ONE word.',
+          situation: 'You are negotiating a lower price with a supplier.',
+          prompt: '"Could you ______ us a discount on this order?"',
+          accepted: ['offer', 'give'],
+          hint: 'Think of a common polite verb paired with "a discount" (e.g., o____ or g___).'
+        },
+        {
+          id: 2,
+          title: 'Challenge 2: Reporting a Problem',
+          instruction: 'Rewrite and correct the full sentence.',
+          situation: 'Your team discovers a serious problem and needs to notify the manager.',
+          prompt: '"We must to inform the manager."',
+          accepted: ['we must inform the manager', 'we must inform the manager.'],
+          hint: 'Modal verbs like "must" are followed directly by the base verb without "to".'
+        },
+        {
+          id: 3,
+          title: 'Challenge 3: Reducing Costs',
+          instruction: 'Complete the first conditional with ONE word.',
+          situation: 'Your team is discussing how to save money.',
+          prompt: '"If we reduce costs, we ______ save money."',
+          accepted: ['will'],
+          hint: 'First conditional structure: If + present simple, subject + ____ + base verb.'
+        },
+        {
+          id: 4,
+          title: 'Challenge 4: Requesting More Time',
+          instruction: 'Complete the sentence with the correct ONE word.',
+          situation: 'Your team cannot finish a project by the deadline and needs more time.',
+          prompt: '"We need to request an ______ to complete the project."',
+          accepted: ['extension'],
+          hint: 'A noun starting with "ex-" meaning extra time granted for a deadline.'
+        },
+        {
+          id: 5,
+          title: 'Challenge 5: Reaching an Agreement',
+          instruction: 'Complete the expression with ONE word.',
+          situation: 'Two companies are negotiating and need to agree on the conditions.',
+          prompt: '"Both sides must reach an ______ before signing the contract."',
+          accepted: ['agreement'],
+          hint: 'The noun form of "agree" — used in the collocation "reach an ______".'
+        }
+      ];
+
+      /* -----------------------------------------------------------------------
+         2. STATE & LOCALSTORAGE PERSISTENCE
+      ----------------------------------------------------------------------- */
+      const STORAGE_KEY = 'jackpot_casino_users_v1';
+      const SESSION_KEY = 'jackpot_casino_active_email_v1';
+
+      let state = {
+        currentUserEmail: null,
+        activeSection: 'hub', // hub | speaking | listening | writing | reading | final
+        subIndex: { speaking: 0, listening: 0, writing: 0, reading: 0 },
+        readingMobileTab: 'text', // text | questions
+        listeningMobileQ: 0,
+        // Station 7-minute countdown timers (420 seconds per station)
+        timers: { speaking: 420, listening: 420, writing: 420, reading: 420 },
+        timerInterval: null,
+        // Speaking Mic & Recognition state
+        micStream: null,
+        audioCtx: null,
+        analyser: null,
+        micAnimFrame: null,
+        recognition: null,
+        isRecording: false,
+        liveTranscript: '',
+        // Listening Audio Engine state
+        htmlAudio: new Audio(),
+        audioMode: 'idle', // idle | html | tts
+        audioSpeed: 1.0,
+        isAudioPlaying: false,
+        isAudioPaused: false,
+        ttsProgressTimer: null,
+        ttsProgressPct: 0,
+        customLocalAudioUrls: {},
+        // Final Jackpot state
+        finalIdx: 0,
+        finalSeconds: 20,
+        finalTimerId: null,
+        finalActive: false
+      };
+
+      function loadAllUsers() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          return raw ? JSON.parse(raw) : {};
+        } catch (e) {
+          return {};
+        }
+      }
+
+      function saveAllUsers(users) {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(users));
+        } catch (e) {
+          showToast('Local storage is full or restricted.');
+        }
+      }
+
+      function getCurrentUser() {
+        if (!state.currentUserEmail) return null;
+        const users = loadAllUsers();
+        return users[state.currentUserEmail] || null;
+      }
+
+      function updateCurrentUser(mutatorFn) {
+        if (!state.currentUserEmail) return null;
+        const users = loadAllUsers();
+        const user = users[state.currentUserEmail];
+        if (!user) return null;
+        mutatorFn(user);
+        users[state.currentUserEmail] = user;
+        saveAllUsers(users);
+        syncHeaderAndBadges();
+        return user;
+      }
+
+      function createDefaultUser(email, pin) {
+        const prefix = email.split('@')[0].replace(/[^a-zA-Z0-9 ]/g, ' ').trim() || 'Player';
+        const displayName = prefix.charAt(0).toUpperCase() + prefix.slice(1, 18);
+        return {
+          email,
+          pin,
+          name: displayName,
+          avatar: MARINE_AVATARS[Math.floor(Math.random() * MARINE_AVATARS.length)],
+          chips: 3,
+          progress: {
+            speaking: [],   // array of completed card IDs (1..10)
+            listening: [],  // array of completed audio IDs (1..10)
+            reading: [],    // array of completed reading IDs (1..10)
+            writing: [],    // array of completed writing IDs (1..10)
+            final: []       // array of completed challenge IDs (1..5)
+          },
+          drafts: {
+            writing: {},
+            speaking: {}
+          },
+          stationDoneApproved: {
+            speaking: false, listening: false, writing: false, reading: false
+          }
+        };
+      }
+
+      /* -----------------------------------------------------------------------
+         3. SYNTHESIZED SOUND FX (Web Audio API Bell Chime + Sparkle, No MP3)
+      ----------------------------------------------------------------------- */
+      let fxAudioCtx = null;
+      function playBellChime() {
+        try {
+          const Ctx = window.AudioContext || window.webkitAudioContext;
+          if (!fxAudioCtx) fxAudioCtx = new Ctx();
+          if (fxAudioCtx.state === 'suspended') fxAudioCtx.resume();
+
+          const now = fxAudioCtx.currentTime;
+          const notes = [880, 1108.73, 1318.51, 1760]; // A5, C#6, E6, A6 bright casino bell triad
+          notes.forEach((freq, idx) => {
+            const osc = fxAudioCtx.createOscillator();
+            const gain = fxAudioCtx.createGain();
+            osc.type = idx === 3 ? 'sine' : 'triangle';
+            osc.frequency.setValueAtTime(freq, now + idx * 0.075);
+
+            gain.gain.setValueAtTime(0.001, now + idx * 0.075);
+            gain.gain.exponentialRampToValueAtTime(0.18, now + idx * 0.075 + 0.02);
+            gain.gain.exponentialRampToValueAtTime(0.0008, now + idx * 0.075 + 0.75);
+
+            osc.connect(gain);
+            gain.connect(fxAudioCtx.destination);
+            osc.start(now + idx * 0.075);
+            osc.stop(now + idx * 0.075 + 0.8);
+          });
+        } catch (e) { /* AudioContext blocked */ }
+      }
+
+      function playScanBeep() {
+        try {
+          const Ctx = window.AudioContext || window.webkitAudioContext;
+          if (!fxAudioCtx) fxAudioCtx = new Ctx();
+          if (fxAudioCtx.state === 'suspended') fxAudioCtx.resume();
+          const now = fxAudioCtx.currentTime;
+          const osc = fxAudioCtx.createOscillator();
+          const gain = fxAudioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(520, now);
+          osc.frequency.exponentialRampToValueAtTime(980, now + 0.16);
+          gain.gain.setValueAtTime(0.06, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
+          osc.connect(gain);
+          gain.connect(fxAudioCtx.destination);
+          osc.start(now);
+          osc.stop(now + 0.2);
+        } catch (e) {}
+      }
+
+      /* -----------------------------------------------------------------------
+         4. CANVAS ANIMATIONS: UNDERWATER BUBBLES + CONFETTI & FIREWORKS
+      ----------------------------------------------------------------------- */
+      function initBubblesCanvas() {
+        const canvas = document.getElementById('bubblesCanvas');
+        const ctx = canvas.getContext('2d');
+        let bubbles = [];
+
+        function resize() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        for (let i = 0; i < 34; i++) {
+          bubbles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: 2 + Math.random() * 6,
+            vy: 0.35 + Math.random() * 0.85,
+            vx: (Math.random() - 0.5) * 0.35,
+            alpha: 0.12 + Math.random() * 0.25
+          });
+        }
+
+        function tick() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          for (const b of bubbles) {
+            b.y -= b.vy;
+            b.x += Math.sin(b.y * 0.015) * 0.3 + b.vx;
+            if (b.y < -12) {
+              b.y = canvas.height + 12;
+              b.x = Math.random() * canvas.width;
+            }
+            ctx.beginPath();
+            ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(180, 238, 255, ${b.alpha})`;
+            ctx.lineWidth = 1.2;
+            ctx.stroke();
+            ctx.fillStyle = `rgba(255, 255, 255, ${b.alpha * 0.35})`;
+            ctx.fill();
+          }
+          requestAnimationFrame(tick);
+        }
+        tick();
+      }
+
+      // Celebratory Confetti + Fireworks Burst
+      let fxParticles = [];
+      let fxRunning = false;
+      function triggerCelebrationFX() {
+        playBellChime();
+        const canvas = document.getElementById('fxCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const colors = ['#fff5c0', '#f2c94c', '#ff4d4f', '#2ecc71', '#00f5d4', '#4cc9f0', '#ffffff'];
+        const centers = [
+          { x: canvas.width * 0.3, y: canvas.height * 0.35 },
+          { x: canvas.width * 0.7, y: canvas.height * 0.32 },
+          { x: canvas.width * 0.5, y: canvas.height * 0.45 }
+        ];
+
+        // Firework bursts
+        centers.forEach(c => {
+          for (let i = 0; i < 36; i++) {
+            const angle = (Math.PI * 2 * i) / 36 + Math.random() * 0.2;
+            const speed = 2.5 + Math.random() * 5.5;
+            fxParticles.push({
+              x: c.x, y: c.y,
+              vx: Math.cos(angle) * speed,
+              vy: Math.sin(angle) * speed,
+              size: 3 + Math.random() * 3.5,
+              color: colors[Math.floor(Math.random() * colors.length)],
+              life: 1,
+              decay: 0.013 + Math.random() * 0.01,
+              type: 'spark'
+            });
+          }
+        });
+
+        // Falling Confetti ribbons
+        for (let i = 0; i < 75; i++) {
+          fxParticles.push({
+            x: Math.random() * canvas.width,
+            y: -10 - Math.random() * 80,
+            vx: (Math.random() - 0.5) * 3,
+            vy: 2.2 + Math.random() * 3.5,
+            size: 6 + Math.random() * 5,
+            rot: Math.random() * Math.PI,
+            vrot: (Math.random() - 0.5) * 0.2,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            life: 1,
+            decay: 0.008 + Math.random() * 0.006,
+            type: 'confetti'
+          });
+        }
+
+        if (!fxRunning) {
+          fxRunning = true;
+          function animateFX() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            fxParticles = fxParticles.filter(p => p.life > 0);
+            for (const p of fxParticles) {
+              p.x += p.vx;
+              p.y += p.vy;
+              p.vy += p.type === 'spark' ? 0.08 : 0.04;
+              p.life -= p.decay;
+              ctx.save();
+              ctx.globalAlpha = Math.max(0, p.life);
+              ctx.fillStyle = p.color;
+              if (p.type === 'confetti') {
+                p.rot += p.vrot;
+                ctx.translate(p.x, p.y);
+                ctx.rotate(p.rot);
+                ctx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2);
+              } else {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+              }
+              ctx.restore();
+            }
+            if (fxParticles.length > 0) {
+              requestAnimationFrame(animateFX);
+            } else {
+              fxRunning = false;
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+          }
+          animateFX();
+        }
+      }
+
+      /* -----------------------------------------------------------------------
+         5. ACE CARD SCANNER BOT ENGINE
+      ----------------------------------------------------------------------- */
+      function aceScan(callback, scanningLabel = 'Scanning...') {
+        playScanBeep();
+        const cardEl = document.getElementById('aceCardVisual');
+        const pillEl = document.getElementById('aceStatusPill');
+        cardEl.classList.add('ace-scanning');
+        pillEl.textContent = scanningLabel;
+        pillEl.className = 'text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-cyan-100 text-cyan-900 border border-cyan-400';
+
+        setTimeout(() => {
+          cardEl.classList.remove('ace-scanning');
+          callback();
+        }, 680);
+      }
+
+      function setAceFeedback(html, verdict = null, openMobileIfNeeded = false) {
+        document.getElementById('aceFeedbackBody').innerHTML = html;
+        document.getElementById('mobileAceFeedback').innerHTML = html;
+
+        const pillEl = document.getElementById('aceStatusPill');
+        const verdictEl = document.getElementById('aceVerdictBadge');
+
+        if (verdict === 'pass') {
+          pillEl.textContent = 'Approved';
+          pillEl.className = 'text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-400';
+          verdictEl.textContent = 'PASSED ✓';
+          verdictEl.className = 'px-2 py-0.5 rounded-full text-[9px] font-bold bg-emerald-500/25 text-emerald-300 border border-emerald-400/50';
+        } else if (verdict === 'retry') {
+          pillEl.textContent = 'Check Tips';
+          pillEl.className = 'text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-400';
+          verdictEl.textContent = 'NEEDS WORK';
+          verdictEl.className = 'px-2 py-0.5 rounded-full text-[9px] font-bold bg-amber-500/25 text-amber-200 border border-amber-400/50';
+        } else {
+          pillEl.textContent = 'Ready';
+          pillEl.className = 'text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300';
+          verdictEl.className = 'hidden';
+        }
+
+        if (openMobileIfNeeded && window.innerWidth < 1280) {
+          document.getElementById('mobileAceModal').classList.remove('hidden');
+        }
+      }
+
+      /* -----------------------------------------------------------------------
+         6. CUSTOM MODALS & TOASTS (Zero alert() / confirm())
+      ----------------------------------------------------------------------- */
+      function showToast(msg) {
+        const el = document.getElementById('toastBanner');
+        el.textContent = msg;
+        el.classList.remove('hidden');
+        clearTimeout(el._t);
+        el._t = setTimeout(() => el.classList.add('hidden'), 2800);
+      }
+
+      function showDialog({ title, message, buttons }) {
+        document.getElementById('dialogTitle').textContent = title;
+        document.getElementById('dialogMessage').textContent = message;
+        const actionsEl = document.getElementById('dialogActions');
+        actionsEl.innerHTML = '';
+        buttons.forEach(btn => {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.textContent = btn.label;
+          b.className = btn.primary
+            ? 'gold-btn rounded-xl px-4 py-2 text-xs uppercase'
+            : 'rounded-xl px-4 py-2 text-xs bg-white/10 hover:bg-white/20 text-slate-200 border border-white/15';
+          b.onclick = () => {
+            document.getElementById('dialogModal').classList.add('hidden');
+            if (btn.onClick) btn.onClick();
+          };
+          actionsEl.appendChild(b);
+        });
+        document.getElementById('dialogModal').classList.remove('hidden');
+      }
+
+      /* -----------------------------------------------------------------------
+         7. 7-MINUTE STATION TIMER
+      ----------------------------------------------------------------------- */
+      function stopStationTimer() {
+        if (state.timerInterval) {
+          clearInterval(state.timerInterval);
+          state.timerInterval = null;
+        }
+      }
+
+      function startStationTimer(stationKey) {
+        stopStationTimer();
+        const wrap = document.getElementById('topTimerWrap');
+        if (!['speaking', 'listening', 'writing', 'reading'].includes(stationKey)) {
+          wrap.classList.add('hidden');
+          wrap.classList.remove('flex');
+          return;
+        }
+        wrap.classList.remove('hidden');
+        wrap.classList.add('flex');
+        renderTimerUI(stationKey);
+
+        state.timerInterval = setInterval(() => {
+          if (state.timers[stationKey] > 0) {
+            state.timers[stationKey] -= 1;
+            renderTimerUI(stationKey);
+          } else {
+            stopStationTimer();
+            showToast('Time is up for this station! Click "Done" to let Ace Bot evaluate.');
+            setAceFeedback(
+              `<p class="text-amber-300 font-semibold">⏰ Your 7-minute timer has ended!</p>
+               <p>Click the golden <strong>Done ✓</strong> button at the top right so I can scan your progress and unlock <em>Choose Next Station</em>.</p>`,
+              'retry',
+              true
+            );
+          }
+        }, 1000);
+      }
+
+      function renderTimerUI(stationKey) {
+        const secs = state.timers[stationKey];
+        const m = String(Math.floor(secs / 60)).padStart(2, '0');
+        const s = String(secs % 60).padStart(2, '0');
+        const disp = document.getElementById('timerDisplay');
+        disp.textContent = `${m}:${s}`;
+        disp.className = secs <= 60 ? 'font-mono font-bold text-sm text-red-400 animate-pulse' : 'font-mono font-bold text-sm text-amber-300';
+        const pct = Math.min(100, (secs / 420) * 100);
+        document.getElementById('timerProgress').style.width = `${pct}%`;
+      }
+
+      /* -----------------------------------------------------------------------
+         8. LOGIN, SESSION & PROFILE MANAGEMENT
+      ----------------------------------------------------------------------- */
+      function loginUser(email, pin) {
+        const cleanEmail = email.trim().toLowerCase();
+        const users = loadAllUsers();
+        if (users[cleanEmail]) {
+          if (users[cleanEmail].pin !== pin) {
+            return { ok: false, error: 'Incorrect 4-digit PIN for this email.' };
+          }
+        } else {
+          users[cleanEmail] = createDefaultUser(cleanEmail, pin);
+          saveAllUsers(users);
+        }
+        state.currentUserEmail = cleanEmail;
+        localStorage.setItem(SESSION_KEY, cleanEmail);
+        enterCasinoApp();
+        return { ok: true };
+      }
+
+      function enterCasinoApp() {
+        document.getElementById('welcomeScreen').classList.add('hidden');
+        document.getElementById('appShell').classList.remove('hidden');
+        syncHeaderAndBadges();
+        navigateTo('hub');
+      }
+
+      function logoutUser() {
+        stopStationTimer();
+        stopListeningAudio();
+        stopSpeakingMic();
+        clearInterval(state.finalTimerId);
+        state.currentUserEmail = null;
+        localStorage.removeItem(SESSION_KEY);
+        document.getElementById('appShell').classList.add('hidden');
+        document.getElementById('welcomeScreen').classList.remove('hidden');
+        document.getElementById('loginPin').value = '';
+      }
+
+      function syncHeaderAndBadges() {
+        const user = getCurrentUser();
+        if (!user) return;
+        document.getElementById('chipCountDisplay').textContent = user.chips;
+        document.getElementById('topAvatar').textContent = user.avatar;
+        document.getElementById('topPlayerName').textContent = user.name;
+        document.getElementById('badge-speaking').textContent = `${user.progress.speaking.length}/10`;
+        document.getElementById('badge-listening').textContent = `${user.progress.listening.length}/10`;
+        document.getElementById('badge-writing').textContent = `${user.progress.writing.length}/10`;
+        document.getElementById('badge-reading').textContent = `${user.progress.reading.length}/10`;
+        document.getElementById('badge-final').textContent = `${user.progress.final.length}/5`;
+      }
+
+      function markActivityCompleted(station, id) {
+        let newlyAwarded = false;
+        updateCurrentUser(user => {
+          if (!user.progress[station].includes(id)) {
+            user.progress[station].push(id);
+            user.chips += 1;
+            newlyAwarded = true;
+          }
+        });
+        if (newlyAwarded) {
+          showToast('+1 Casino Chip earned! 🪙');
+        }
+        return newlyAwarded;
+      }
+
+      /* -----------------------------------------------------------------------
+         9. NAVIGATION & STATION ROUTING
+      ----------------------------------------------------------------------- */
+      function closeMobileSidebar() {
+        document.getElementById('sidebar').classList.add('-translate-x-full');
+        document.getElementById('sidebarBackdrop').classList.add('hidden');
+      }
+
+      function navigateTo(section) {
+        stopListeningAudio();
+        stopSpeakingMic();
+        clearInterval(state.finalTimerId);
+        state.finalActive = false;
+        state.activeSection = section;
+        closeMobileSidebar();
+
+        // Highlight active sidebar item
+        document.querySelectorAll('.nav-station-btn').forEach(btn => {
+          const isMatch = btn.dataset.nav === section;
+          btn.classList.toggle('ring-2', isMatch);
+          btn.classList.toggle('ring-amber-400', isMatch);
+        });
+
+        const badge = document.getElementById('activeStationBadge');
+        const title = document.getElementById('activeStationTitle');
+        const doneBtn = document.getElementById('stationDoneBtn');
+
+        if (section === 'hub') {
+          stopStationTimer();
+          badge.className = 'text-xs font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-amber-400/20 text-amber-200 border border-amber-300/40';
+          badge.textContent = 'FLOOR HUB';
+          title.textContent = 'Select a Skill Station to Begin';
+          doneBtn.classList.add('hidden');
+          renderHubView();
+        } else if (section === 'speaking') {
+          startStationTimer('speaking');
+          badge.className = 'text-xs font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-red-950/70 station-speaking-txt border border-red-400/40';
+          badge.textContent = 'SPEAKING';
+          title.textContent = 'Poker Interview — Live Mic Role-Play';
+          doneBtn.classList.remove('hidden');
+          renderSpeakingView();
+        } else if (section === 'listening') {
+          startStationTimer('listening');
+          badge.className = 'text-xs font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-slate-800/80 station-listening-txt border border-slate-400/40';
+          badge.textContent = 'LISTENING';
+          title.textContent = 'Roulette Announcements — Audio Comprehension';
+          doneBtn.classList.remove('hidden');
+          renderListeningView();
+        } else if (section === 'writing') {
+          startStationTimer('writing');
+          badge.className = 'text-xs font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-emerald-950/70 station-writing-txt border border-emerald-400/40';
+          badge.textContent = 'WRITING';
+          title.textContent = 'VIP Mail — Professional Email Studio';
+          doneBtn.classList.remove('hidden');
+          renderWritingView();
+        } else if (section === 'reading') {
+          startStationTimer('reading');
+          badge.className = 'text-xs font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-lg station-reading-pill';
+          badge.innerHTML = '<span class="station-reading-txt">READING</span>';
+          title.textContent = 'Blackjack Job Match — Business Cases';
+          doneBtn.classList.remove('hidden');
+          renderReadingView();
+        } else if (section === 'final') {
+          stopStationTimer();
+          badge.className = 'text-xs font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-amber-400/25 text-amber-200 border border-amber-300/60';
+          badge.textContent = 'FINAL JACKPOT';
+          title.textContent = 'Grammar & Vocabulary 20-Second Challenge';
+          doneBtn.classList.add('hidden');
+          renderFinalJackpotView();
+        }
+      }
+
+      /* -----------------------------------------------------------------------
+         10. VIEW RENDERERS (Strictly Fitted to Viewport, Tabbed Navigation)
+      ----------------------------------------------------------------------- */
+
+      // A. FLOOR HUB VIEW
+      function renderHubView() {
+        const user = getCurrentUser();
+        const totalDone = user.progress.speaking.length + user.progress.listening.length + user.progress.reading.length + user.progress.writing.length + user.progress.final.length;
+        const pct = Math.round((totalDone / 45) * 100);
+
+        document.getElementById('workspaceContent').innerHTML = `
+          <div class="casino-glass rounded-3xl flex-1 p-4 sm:p-5 flex flex-col justify-between gap-3 overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-2 bg-[#021520]/70 border border-amber-300/25 rounded-2xl p-3.5">
+              <div class="flex items-center gap-3">
+                <div class="text-3xl sm:text-4xl">${user.avatar}</div>
+                <div>
+                  <div class="text-xs text-cyan-200">Welcome back,</div>
+                  <div class="font-gold-serif text-base sm:text-xl">${escapeHtml(user.name)}</div>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="text-[11px] uppercase tracking-wider text-cyan-200">Overall Mastery</div>
+                <div class="font-bold text-lg text-amber-300">${pct}% <span class="text-xs text-slate-300 font-normal">(${totalDone}/45)</span></div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1 min-h-0">
+              <button onclick="window._jcNav('speaking')" class="rounded-2xl p-4 bg-[#031c2b]/85 hover:bg-[#062d42] border border-red-400/35 text-left flex flex-col justify-between transition group">
+                <div class="flex items-center justify-between">
+                  <span class="station-speaking-txt font-extrabold text-base tracking-wide">SPEAKING</span>
+                  <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-red-500/20 text-red-200">${user.progress.speaking.length}/10</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-sm text-white">Poker Interview</div>
+                  <p class="text-[11px] text-slate-300 mt-0.5">Live microphone B1+/B2 role-plays &amp; negotiation.</p>
+                </div>
+              </button>
+
+              <button onclick="window._jcNav('listening')" class="rounded-2xl p-4 bg-[#031c2b]/85 hover:bg-[#062d42] border border-slate-400/35 text-left flex flex-col justify-between transition">
+                <div class="flex items-center justify-between">
+                  <span class="station-listening-txt font-extrabold text-base tracking-wide">LISTENING</span>
+                  <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-slate-500/25 text-slate-200">${user.progress.listening.length}/10</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-sm text-white">Roulette Announcements</div>
+                  <p class="text-[11px] text-slate-300 mt-0.5">10 workplace audios with speed controls &amp; 40 questions.</p>
+                </div>
+              </button>
+
+              <button onclick="window._jcNav('writing')" class="rounded-2xl p-4 bg-[#031c2b]/85 hover:bg-[#062d42] border border-emerald-400/35 text-left flex flex-col justify-between transition">
+                <div class="flex items-center justify-between">
+                  <span class="station-writing-txt font-extrabold text-base tracking-wide">WRITING</span>
+                  <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-200">${user.progress.writing.length}/10</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-sm text-white">VIP Mail</div>
+                  <p class="text-[11px] text-slate-300 mt-0.5">Draft 60–90 word B1+/B2 emails scanned by Ace Bot.</p>
+                </div>
+              </button>
+
+              <button onclick="window._jcNav('reading')" class="rounded-2xl p-4 bg-[#031c2b]/85 hover:bg-[#062d42] border border-amber-300/45 text-left flex flex-col justify-between transition">
+                <div class="flex items-center justify-between">
+                  <span class="station-reading-pill px-2.5 py-0.5 rounded-lg"><span class="station-reading-txt text-base tracking-wide">READING</span></span>
+                  <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-200">${user.progress.reading.length}/10</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-sm text-white">Blackjack Job Match</div>
+                  <p class="text-[11px] text-slate-300 mt-0.5">Analyze 10 policies, contracts &amp; reports.</p>
+                </div>
+              </button>
+            </div>
+
+            <button onclick="window._jcNav('final')" class="gold-btn rounded-2xl py-2.5 px-4 text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shrink-0">
+              <span>🏆</span> Final Jackpot: Grammar &amp; Vocabulary Challenge (${user.progress.final.length}/5)
+            </button>
+          </div>
+        `;
+      }
+
+      // B. STATION 1: SPEAKING ("Poker Interview", Mandatory Mic + Live SpeechRecognition)
+      function renderSpeakingView() {
+        const user = getCurrentUser();
+        const idx = state.subIndex.speaking;
+        const item = SPEAKING_DATA[idx];
+        const savedText = user.drafts.speaking[item.id] || '';
+        state.liveTranscript = savedText;
+        const isDone = user.progress.speaking.includes(item.id);
+
+        const tabsHtml = SPEAKING_DATA.map((s, i) => {
+          const done = user.progress.speaking.includes(s.id);
+          return `<button onclick="window._jcSub('speaking', ${i})" class="tab-num-btn rounded-xl px-2.5 py-1 text-xs font-bold shrink-0 ${i === idx ? 'active' : ''} ${done ? 'completed' : ''}">
+            #${s.id}${done ? ' ✓' : ''}
+          </button>`;
+        }).join('');
+
+        document.getElementById('workspaceContent').innerHTML = `
+          <div class="casino-glass rounded-3xl flex-1 p-3 sm:p-4 flex flex-col gap-2.5 min-h-0 overflow-hidden">
+            <!-- Card Selector Tabs (1-10) -->
+            <div class="flex items-center gap-1.5 overflow-x-auto thin-scroll pb-1 shrink-0">
+              ${tabsHtml}
+            </div>
+
+            <!-- Main Two-Panel Speaking Workspace -->
+            <div class="flex-1 min-h-0 grid grid-cols-1 md:grid-cols-2 gap-3 overflow-hidden">
+              <!-- Left: Scenario Card -->
+              <div class="bg-[#021520]/80 border border-red-400/35 rounded-2xl p-3.5 flex flex-col justify-between gap-2 overflow-hidden">
+                <div class="thin-scroll space-y-2 pr-1">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="text-[10px] uppercase tracking-widest text-red-300 font-bold">Card ${item.id} of 10</span>
+                    ${isDone ? '<span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold">Completed ✓</span>' : ''}
+                  </div>
+                  <h3 class="font-gold-serif text-base sm:text-lg">${item.title}</h3>
+                  <p class="text-xs sm:text-sm text-cyan-50 leading-relaxed">${item.situation}</p>
+                  <div class="bg-red-950/35 border border-red-400/25 rounded-xl p-2.5 text-[11px] text-red-100">
+                    <strong class="text-amber-300">Goal:</strong> ${item.objective}
+                  </div>
+                </div>
+                <div>
+                  <div class="text-[10px] uppercase tracking-wider text-amber-200/90 font-semibold mb-1">Target B1+/B2 Vocabulary</div>
+                  <div class="flex flex-wrap gap-1">
+                    ${item.keywords.slice(0, 7).map(k => `<span class="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-cyan-100 border border-white/10">${k}</span>`).join('')}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Mandatory Live Microphone & Transcription -->
+              <div class="bg-[#021520]/80 border border-amber-300/30 rounded-2xl p-3.5 flex flex-col justify-between gap-2.5 overflow-hidden">
+                <div class="flex items-center justify-between gap-2 shrink-0">
+                  <div class="flex items-center gap-2">
+                    <button id="micToggleBtn" type="button" class="rounded-xl px-3.5 py-2 bg-red-600 hover:bg-red-500 text-white text-xs font-bold flex items-center gap-1.5 transition">
+                      <span id="micIcon">🎙️</span>
+                      <span id="micBtnLabel">Activate Mic &amp; Speak</span>
+                    </button>
+                  </div>
+                  <span id="micWordCount" class="text-[11px] font-semibold text-amber-200">0 words</span>
+                </div>
+
+                <!-- Live Audio Level Meter Bar -->
+                <div class="shrink-0 space-y-1">
+                  <div class="flex justify-between text-[10px] text-cyan-200/80">
+                    <span id="micStatusText">Microphone required — click to start speaking in English</span>
+                    <span id="micDbLabel">Idle</span>
+                  </div>
+                  <div class="w-full h-2.5 bg-slate-900 rounded-full overflow-hidden border border-white/10">
+                    <div id="micLevelBar" class="h-full w-0 bg-gradient-to-r from-emerald-400 via-amber-300 to-red-500 transition-all duration-75"></div>
+                  </div>
+                </div>
+
+                <!-- Live English Transcript Box -->
+                <div class="flex-1 min-h-0 flex flex-col">
+                  <div class="text-[10px] uppercase tracking-wider text-cyan-200/80 mb-1 flex justify-between">
+                    <span>Live English Transcription</span>
+                    <button id="clearTranscriptBtn" type="button" class="text-slate-400 hover:text-white underline">Clear</button>
+                  </div>
+                  <div id="transcriptBox" class="thin-scroll flex-1 rounded-xl bg-[#041d2c] border border-white/15 p-2.5 text-xs leading-relaxed text-white">
+                    ${savedText ? escapeHtml(savedText) : '<span class="text-slate-400 italic">Your spoken English will appear here live once your microphone is active...</span>'}
+                  </div>
+                </div>
+
+                <button id="scanSpeechBtn" type="button" class="gold-btn w-full rounded-xl py-2.5 text-xs uppercase tracking-wider shrink-0">
+                  A♠ Scan My Speech
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+
+        updateSpeakingWordCount(savedText);
+        document.getElementById('micToggleBtn').onclick = toggleSpeakingMic;
+        document.getElementById('clearTranscriptBtn').onclick = () => {
+          state.liveTranscript = '';
+          updateCurrentUser(u => { u.drafts.speaking[item.id] = ''; });
+          document.getElementById('transcriptBox').innerHTML = '<span class="text-slate-400 italic">Transcript cleared. Activate your microphone to speak...</span>';
+          updateSpeakingWordCount('');
+        };
+        document.getElementById('scanSpeechBtn').onclick = () => evaluateSpeaking(item);
+      }
+
+      function updateSpeakingWordCount(text) {
+        const words = (text || '').trim().split(/\s+/).filter(Boolean).length;
+        const el = document.getElementById('micWordCount');
+        if (el) {
+          el.textContent = `${words} words (min 25)`;
+          el.className = words >= 25 ? 'text-[11px] font-bold text-emerald-300' : 'text-[11px] font-semibold text-amber-200';
+        }
+      }
+
+      async function toggleSpeakingMic() {
+        if (state.isRecording) {
+          stopSpeakingMic();
+          return;
+        }
+        const statusEl = document.getElementById('micStatusText');
+        const btn = document.getElementById('micToggleBtn');
+        const label = document.getElementById('micBtnLabel');
+
+        try {
+          // Mandatory Microphone Activation
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          state.micStream = stream;
+          state.isRecording = true;
+
+          // Web Audio API Live Waveform/Level Bar
+          const Ctx = window.AudioContext || window.webkitAudioContext;
+          state.audioCtx = new Ctx();
+          const source = state.audioCtx.createMediaStreamSource(stream);
+          state.analyser = state.audioCtx.createAnalyser();
+          state.analyser.fftSize = 256;
+          source.connect(state.analyser);
+          const dataArray = new Uint8Array(state.analyser.frequencyBinCount);
+
+          function pumpMeter() {
+            if (!state.isRecording || !state.analyser) return;
+            state.analyser.getByteFrequencyData(dataArray);
+            let sum = 0;
+            for (let i = 0; i < dataArray.length; i++) sum += dataArray[i];
+            const avg = sum / dataArray.length;
+            const pct = Math.min(100, Math.round((avg / 90) * 100));
+            const bar = document.getElementById('micLevelBar');
+            const db = document.getElementById('micDbLabel');
+            if (bar) bar.style.width = `${pct}%`;
+            if (db) db.textContent = pct > 12 ? 'Listening...' : 'Mic Active';
+            state.micAnimFrame = requestAnimationFrame(pumpMeter);
+          }
+          pumpMeter();
+
+          btn.classList.add('mic-pulse');
+          label.textContent = 'Stop Recording';
+          statusEl.textContent = '🔴 Microphone live — speak clearly in English!';
+
+          // Web Speech API Transcription
+          const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+          if (SpeechRec) {
+            const rec = new SpeechRec();
+            rec.lang = 'en-US';
+            rec.continuous = true;
+            rec.interimResults = true;
+            let finalText = state.liveTranscript ? state.liveTranscript + ' ' : '';
+
+            rec.onresult = (event) => {
+              let interim = '';
+              for (let i = event.resultIndex; i < event.results.length; i++) {
+                const t = event.results[i][0].transcript;
+                if (event.results[i].isFinal) {
+                  finalText += t.trim() + ' ';
+                } else {
+                  interim += t;
+                }
+              }
+              const combined = (finalText + interim).trim();
+              state.liveTranscript = combined;
+              const item = SPEAKING_DATA[state.subIndex.speaking];
+              updateCurrentUser(u => { u.drafts.speaking[item.id] = combined; });
+              const box = document.getElementById('transcriptBox');
+              if (box) box.textContent = combined;
+              updateSpeakingWordCount(combined);
+            };
+
+            rec.onerror = (e) => {
+              if (e.error !== 'no-speech' && e.error !== 'aborted') {
+                statusEl.textContent = `Speech engine note: ${e.error}. Keep speaking or retry.`;
+              }
+            };
+            rec.onend = () => {
+              if (state.isRecording) {
+                try { rec.start(); } catch (err) {}
+              }
+            };
+            state.recognition = rec;
+            rec.start();
+          } else {
+            statusEl.textContent = 'Mic active! (Note: Your browser lacks SpeechRecognition API; Chrome/Edge recommended for live transcription.)';
+            const box = document.getElementById('transcriptBox');
+            if (box) {
+              box.innerHTML = `<div class="text-amber-200 text-[11px] mb-1.5">Your microphone is active, but this browser does not support automatic SpeechRecognition. You may dictate/type your spoken summary below while practicing aloud:</div>
+                <textarea id="fallbackSpeechInput" class="w-full h-24 rounded-lg bg-[#021520] border border-amber-300/35 p-2 text-xs text-white focus:outline-none" placeholder="Summarize what you spoke aloud...">${escapeHtml(state.liveTranscript)}</textarea>`;
+              document.getElementById('fallbackSpeechInput').oninput = (ev) => {
+                state.liveTranscript = ev.target.value;
+                updateSpeakingWordCount(state.liveTranscript);
+              };
+            }
+          }
+        } catch (err) {
+          statusEl.textContent = '⚠️ Microphone access denied. Please allow microphone permission in your browser settings.';
+          showDialog({
+            title: 'Microphone Required',
+            message: 'Speaking ("Poker Interview") requires microphone access so you can practice aloud and receive live transcription and Ace Bot feedback. Please allow microphone permissions and try again.',
+            buttons: [{ label: 'Understood', primary: true }]
+          });
+        }
+      }
+
+      function stopSpeakingMic() {
+        state.isRecording = false;
+        if (state.micAnimFrame) cancelAnimationFrame(state.micAnimFrame);
+        if (state.recognition) {
+          try { state.recognition.onend = null; state.recognition.stop(); } catch (e) {}
+          state.recognition = null;
+        }
+        if (state.micStream) {
+          state.micStream.getTracks().forEach(t => t.stop());
+          state.micStream = null;
+        }
+        if (state.audioCtx) {
+          try { state.audioCtx.close(); } catch (e) {}
+          state.audioCtx = null;
+        }
+        const btn = document.getElementById('micToggleBtn');
+        const label = document.getElementById('micBtnLabel');
+        const bar = document.getElementById('micLevelBar');
+        const db = document.getElementById('micDbLabel');
+        const status = document.getElementById('micStatusText');
+        if (btn) btn.classList.remove('mic-pulse');
+        if (label) label.textContent = 'Activate Mic & Speak';
+        if (bar) bar.style.width = '0%';
+        if (db) db.textContent = 'Idle';
+        if (status) status.textContent = 'Recording stopped. Ready to scan or continue speaking.';
+      }
+
+      function evaluateSpeaking(item) {
+        stopSpeakingMic();
+        const text = (state.liveTranscript || '').trim();
+        const lower = text.toLowerCase();
+        const words = text.split(/\s+/).filter(Boolean);
+        const wordCount = words.length;
+
+        const politeMarkers = ['please', 'could', 'would', 'appreciate', 'understand', 'apologize', 'sorry', 'however', 'suggest', 'propose', 'recommend', 'thank', 'happy to', 'afraid', 'solution', 'compromise', 'agree'];
+        const foundPolite = politeMarkers.filter(m => lower.includes(m));
+        const foundKeywords = item.keywords.filter(k => lower.includes(k));
+        const hasVariety = wordCount >= 25 && (text.includes('.') || text.includes(',') || foundPolite.length >= 1 || words.length >= 32);
+
+        aceScan(() => {
+          const issues = [];
+          if (wordCount < 25) {
+            issues.push(`<strong>Fluency length:</strong> You spoke <strong>${wordCount} words</strong>. Aim for at least <strong>25+ words</strong> for a solid B1+/B2 professional response.`);
+          }
+          if (foundPolite.length === 0) {
+            issues.push(`<strong>Professional tone:</strong> Include diplomatic markers like <em>"I understand...", "Could we...", "I propose...", or "However..."</em>.`);
+          }
+          if (foundKeywords.length < 2) {
+            issues.push(`<strong>Scenario relevance:</strong> Try integrating more key terms such as: <em>${item.keywords.slice(0, 4).join(', ')}</em>.`);
+          }
+
+          if (issues.length === 0 && hasVariety) {
+            markActivityCompleted('speaking', item.id);
+            triggerCelebrationFX();
+            setAceFeedback(
+              `<p class="text-emerald-300 font-bold">🎉 Excellent B1+/B2 Speaking Performance!</p>
+               <p><strong>Word Count:</strong> ${wordCount} words</p>
+               <p><strong>Key Vocabulary Used:</strong> ${foundKeywords.slice(0, 5).join(', ')}</p>
+               <p><strong>Diplomatic Markers:</strong> ${foundPolite.slice(0, 4).join(', ')}</p>
+               <p class="text-amber-200">Card #${item.id} is marked complete! Try the next card or click <strong>Done ✓</strong> when ready.</p>`,
+              'pass',
+              true
+            );
+            renderSpeakingView();
+          } else {
+            setAceFeedback(
+              `<p class="text-amber-300 font-bold">🔍 Ace Bot Scan — Almost There!</p>
+               <ul class="list-disc pl-4 space-y-1">${issues.map(i => `<li>${i}</li>`).join('')}</ul>
+               <p class="text-cyan-200 pt-1"><strong>Tip:</strong> ${item.hint}</p>`,
+              'retry',
+              true
+            );
+          }
+        }, 'Scanning Speech...');
+      }
+
+      // C. STATION 2: LISTENING ("Roulette Announcements", 10 Audios + 40 MCQs, Hidden Scripts)
+      function renderListeningView() {
+        const user = getCurrentUser();
+        const idx = state.subIndex.listening;
+        const item = LISTENING_DATA[idx];
+        const isDone = user.progress.listening.includes(item.id);
+
+        const tabsHtml = LISTENING_DATA.map((a, i) => {
+          const done = user.progress.listening.includes(a.id);
+          return `<button onclick="window._jcSub('listening', ${i})" class="tab-num-btn rounded-xl px-2.5 py-1 text-xs font-bold shrink-0 ${i === idx ? 'active' : ''} ${done ? 'completed' : ''}">
+            #${a.id}${done ? ' ✓' : ''}
+          </button>`;
+        }).join('');
+
+        const questionsHtml = item.questions.map((qObj, qIdx) => {
+          return `
+            <div class="bg-[#031c2b]/85 border border-white/10 rounded-xl p-2.5 flex flex-col justify-between gap-1.5">
+              <div class="text-xs font-semibold text-amber-100 leading-snug">${qObj.q}</div>
+              <div class="space-y-1">
+                ${qObj.opts.map((opt, oIdx) => `
+                  <label class="flex items-start gap-2 text-[11px] text-cyan-50 hover:bg-white/10 rounded-lg px-2 py-1 cursor-pointer transition">
+                    <input type="radio" name="lq_${item.id}_${qIdx}" value="${oIdx}" class="mt-0.5 accent-amber-400 shrink-0" />
+                    <span class="leading-tight">${opt}</span>
+                  </label>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        document.getElementById('workspaceContent').innerHTML = `
+          <div class="casino-glass rounded-3xl flex-1 p-3 sm:p-4 flex flex-col gap-2.5 min-h-0 overflow-hidden">
+            <!-- Audio Selector Tabs (1-10) -->
+            <div class="flex items-center gap-1.5 overflow-x-auto thin-scroll pb-1 shrink-0">
+              ${tabsHtml}
+            </div>
+
+            <!-- Custom Roulette Audio Player Bar (Scripts NEVER Shown) -->
+            <div class="bg-[#021520]/85 border border-slate-400/35 rounded-2xl p-3 shrink-0 flex flex-col gap-2">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-lg">🎧</span>
+                  <div>
+                    <div class="font-gold-serif text-sm">Audio ${item.id}: ${item.title}</div>
+                    <div id="audioStatusLabel" class="text-[10px] text-cyan-200/80">Listen carefully — scripts are hidden per Roulette rules</div>
+                  </div>
+                </div>
+
+                <!-- Playback Controls: Play, Pause, Stop, Speed, Local .wav Loader -->
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <button id="btnAudioPlay" type="button" class="gold-btn rounded-xl px-3 py-1.5 text-xs">▶ Play</button>
+                  <button id="btnAudioPause" type="button" class="rounded-xl px-2.5 py-1.5 bg-white/10 hover:bg-white/20 text-xs font-semibold border border-white/15">⏸ Pause</button>
+                  <button id="btnAudioStop" type="button" class="rounded-xl px-2.5 py-1.5 bg-red-500/20 hover:bg-red-500/35 text-red-200 text-xs font-semibold border border-red-400/30">⏹ Stop</button>
+
+                  <select id="audioSpeedSel" aria-label="Playback Speed" class="rounded-xl bg-[#042336] border border-amber-300/40 text-amber-200 text-xs font-bold px-2 py-1.5 focus:outline-none">
+                    <option value="0.75" ${state.audioSpeed === 0.75 ? 'selected' : ''}>0.75x</option>
+                    <option value="1" ${state.audioSpeed === 1 ? 'selected' : ''}>1.0x</option>
+                    <option value="1.25" ${state.audioSpeed === 1.25 ? 'selected' : ''}>1.25x</option>
+                    <option value="1.5" ${state.audioSpeed === 1.5 ? 'selected' : ''}>1.5x</option>
+                  </select>
+
+                  <label title="Optional: Load local .wav/.mp3 file for offline classroom use" class="cursor-pointer rounded-xl px-2 py-1.5 bg-white/10 hover:bg-white/20 border border-white/15 text-[11px] text-cyan-200">
+                    📂
+                    <input id="localAudioFile" type="file" accept="audio/*" class="hidden" />
+                  </label>
+                </div>
+              </div>
+
+              <!-- Progress Bar -->
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div id="audioProgressBar" class="h-full w-0 bg-gradient-to-r from-cyan-400 to-amber-300 transition-all duration-200"></div>
+              </div>
+            </div>
+
+            <!-- 4 Multiple Choice Questions (2x2 Grid on Desktop, Compact Scroll-Safe on Small Mobile) -->
+            <div class="flex-1 min-h-0 thin-scroll grid grid-cols-1 md:grid-cols-2 gap-2.5 pr-0.5">
+              ${questionsHtml}
+            </div>
+
+            <!-- Check Activity Button -->
+            <div class="shrink-0 flex items-center justify-between gap-2 pt-1">
+              <span class="text-[11px] text-cyan-200/80">${isDone ? '✅ Audio completed!' : 'Select all 4 answers and scan with Ace Bot.'}</span>
+              <button id="checkListeningBtn" type="button" class="gold-btn rounded-xl px-5 py-2 text-xs uppercase tracking-wider">
+                A♠ Check Answers
+              </button>
+            </div>
+          </div>
+        `;
+
+        document.getElementById('btnAudioPlay').onclick = () => playListeningAudio(item);
+        document.getElementById('btnAudioPause').onclick = pauseListeningAudio;
+        document.getElementById('btnAudioStop').onclick = stopListeningAudio;
+        document.getElementById('audioSpeedSel').onchange = (e) => {
+          state.audioSpeed = parseFloat(e.target.value);
+          if (state.audioMode === 'html') {
+            state.htmlAudio.playbackRate = state.audioSpeed;
+          } else if (state.audioMode === 'tts' && state.isAudioPlaying) {
+            stopListeningAudio();
+            playTTSFallback(item);
+          }
+        };
+        document.getElementById('localAudioFile').onchange = (e) => {
+          const file = e.target.files[0];
+          if (file) {
+            state.customLocalAudioUrls[item.id] = URL.createObjectURL(file);
+            showToast(`Loaded local audio for Audio ${item.id}!`);
+            playListeningAudio(item);
+          }
+        };
+        document.getElementById('checkListeningBtn').onclick = () => evaluateListening(item);
+      }
+
+      function playListeningAudio(item) {
+        // Resume if paused
+        if (state.isAudioPaused) {
+          if (state.audioMode === 'html') {
+            state.htmlAudio.play();
+            state.isAudioPaused = false;
+            state.isAudioPlaying = true;
+            setAudioStatus('Playing audio...');
+            return;
+          } else if (state.audioMode === 'tts' && window.speechSynthesis) {
+            window.speechSynthesis.resume();
+            state.isAudioPaused = false;
+            state.isAudioPlaying = true;
+            setAudioStatus(`Playing voice announcement (${state.audioSpeed}x)...`);
+            return;
+          }
+        }
+
+        stopListeningAudio();
+
+        // 1. Check if user loaded a local .wav file
+        const srcUrl = state.customLocalAudioUrls[item.id]
+          || `https://docs.google.com/uc?export=download&id=${item.driveId}`;
+
+        setAudioStatus('Connecting to audio stream...');
+        const audio = state.htmlAudio;
+        audio.src = srcUrl;
+        audio.playbackRate = state.audioSpeed;
+
+        let settled = false;
+        const fallbackTimer = setTimeout(() => {
+          if (!settled) {
+            settled = true;
+            audio.pause();
+            playTTSFallback(item);
+          }
+        }, 2200);
+
+        audio.oncanplay = () => {
+          if (settled) return;
+          settled = true;
+          clearTimeout(fallbackTimer);
+          state.audioMode = 'html';
+          state.isAudioPlaying = true;
+          state.isAudioPaused = false;
+          audio.playbackRate = state.audioSpeed;
+          audio.play().catch(() => playTTSFallback(item));
+          setAudioStatus(`Playing recording (${state.audioSpeed}x)...`);
+        };
+
+        audio.ontimeupdate = () => {
+          if (audio.duration) {
+            const pct = Math.min(100, (audio.currentTime / audio.duration) * 100);
+            const bar = document.getElementById('audioProgressBar');
+            if (bar) bar.style.width = `${pct}%`;
+          }
+        };
+
+        audio.onended = () => {
+          state.isAudioPlaying = false;
+          setAudioStatus('Audio finished. Answer the 4 questions below!');
+        };
+
+        audio.onerror = () => {
+          if (settled) return;
+          settled = true;
+          clearTimeout(fallbackTimer);
+          playTTSFallback(item);
+        };
+
+        audio.load();
+      }
+
+      function playTTSFallback(item) {
+        if (!('speechSynthesis' in window)) {
+          setAudioStatus('Audio stream unavailable. Use 📂 to load the local .wav file.');
+          return;
+        }
+        window.speechSynthesis.cancel();
+        const utter = new SpeechSynthesisUtterance(item.hiddenScript);
+        utter.lang = 'en-US';
+        utter.rate = state.audioSpeed;
+
+        const voices = window.speechSynthesis.getVoices();
+        const enVoice = voices.find(v => /en-(US|GB)/i.test(v.lang) && /Google|Natural|Samantha|Daniel|Microsoft/i.test(v.name))
+          || voices.find(v => /^en/i.test(v.lang));
+        if (enVoice) utter.voice = enVoice;
+
+        state.audioMode = 'tts';
+        state.isAudioPlaying = true;
+        state.isAudioPaused = false;
+        state.ttsProgressPct = 0;
+
+        const estMs = (item.hiddenScript.split(' ').length / (2.5 * state.audioSpeed)) * 1000;
+        const stepMs = 150;
+        clearInterval(state.ttsProgressTimer);
+        state.ttsProgressTimer = setInterval(() => {
+          if (!state.isAudioPaused && state.isAudioPlaying) {
+            state.ttsProgressPct = Math.min(98, state.ttsProgressPct + (stepMs / estMs) * 100);
+            const bar = document.getElementById('audioProgressBar');
+            if (bar) bar.style.width = `${state.ttsProgressPct}%`;
+          }
+        }, stepMs);
+
+        utter.onend = () => {
+          clearInterval(state.ttsProgressTimer);
+          state.isAudioPlaying = false;
+          state.isAudioPaused = false;
+          const bar = document.getElementById('audioProgressBar');
+          if (bar) bar.style.width = '100%';
+          setAudioStatus('Announcement finished. Answer the 4 questions below!');
+        };
+
+        setAudioStatus(`Playing voice announcement (${state.audioSpeed}x)...`);
+        window.speechSynthesis.speak(utter);
+      }
+
+      function pauseListeningAudio() {
+        if (!state.isAudioPlaying) return;
+        if (state.audioMode === 'html') {
+          state.htmlAudio.pause();
+        } else if (state.audioMode === 'tts' && window.speechSynthesis) {
+          window.speechSynthesis.pause();
+        }
+        state.isAudioPaused = true;
+        state.isAudioPlaying = false;
+        setAudioStatus('Paused');
+      }
+
+      function stopListeningAudio() {
+        try {
+          state.htmlAudio.pause();
+          state.htmlAudio.currentTime = 0;
+        } catch (e) {}
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+        }
+        clearInterval(state.ttsProgressTimer);
+        state.audioMode = 'idle';
+        state.isAudioPlaying = false;
+        state.isAudioPaused = false;
+        const bar = document.getElementById('audioProgressBar');
+        if (bar) bar.style.width = '0%';
+        setAudioStatus('Stopped — click Play to listen again');
+      }
+
+      function setAudioStatus(txt) {
+        const el = document.getElementById('audioStatusLabel');
+        if (el) el.textContent = txt;
+      }
+
+      function evaluateListening(item) {
+        const answers = [];
+        for (let i = 0; i < item.questions.length; i++) {
+          const checked = document.querySelector(`input[name="lq_${item.id}_${i}"]:checked`);
+          answers.push(checked ? parseInt(checked.value, 10) : -1);
+        }
+
+        if (answers.includes(-1)) {
+          setAceFeedback('<p class="text-amber-300 font-semibold">⚠️ Please answer all 4 questions before scanning!</p>', 'retry', true);
+          return;
+        }
+
+        aceScan(() => {
+          const wrongNums = [];
+          item.questions.forEach((q, i) => {
+            if (answers[i] !== q.ans) wrongNums.push(i + 1);
+          });
+
+          if (wrongNums.length === 0) {
+            markActivityCompleted('listening', item.id);
+            triggerCelebrationFX();
+            setAceFeedback(
+              `<p class="text-emerald-300 font-bold">🎉 Spot on! 4/4 Correct on Audio ${item.id}!</p>
+               <p>Your workplace listening comprehension is sharp. Move to the next audio tab or click <strong>Done ✓</strong> when finished.</p>`,
+              'pass',
+              true
+            );
+            renderListeningView();
+          } else {
+            setAceFeedback(
+              `<p class="text-amber-300 font-bold">🔍 Ace Bot Found ${wrongNums.length} Mistake(s)</p>
+               <p>Re-check <strong>Question(s): ${wrongNums.join(', ')}</strong>.</p>
+               <p class="text-cyan-200"><strong>Clue:</strong> ${item.hint}</p>
+               <p class="text-[11px] text-slate-300">Tip: Try replaying the audio at <strong>0.75x</strong> speed!</p>`,
+              'retry',
+              true
+            );
+          }
+        }, 'Scanning Audio Quiz...');
+      }
+
+      // D. STATION 3: READING ("Blackjack Job Match", All 10 Texts + 30 MCQs)
+      function renderReadingView() {
+        const user = getCurrentUser();
+        const idx = state.subIndex.reading;
+        const item = READING_DATA[idx];
+        const isDone = user.progress.reading.includes(item.id);
+
+        const tabsHtml = READING_DATA.map((r, i) => {
+          const done = user.progress.reading.includes(r.id);
+          return `<button onclick="window._jcSub('reading', ${i})" class="tab-num-btn rounded-xl px-2.5 py-1 text-xs font-bold shrink-0 ${i === idx ? 'active' : ''} ${done ? 'completed' : ''}">
+            #${r.id}${done ? ' ✓' : ''}
+          </button>`;
+        }).join('');
+
+        const qHtml = item.questions.map((qObj, qIdx) => `
+          <div class="bg-[#031c2b]/85 border border-white/10 rounded-xl p-2.5 space-y-1.5">
+            <div class="text-xs font-semibold text-amber-100">${qObj.q}</div>
+            <div class="space-y-1">
+              ${qObj.opts.map((opt, oIdx) => `
+                <label class="flex items-start gap-2 text-[11px] text-cyan-50 hover:bg-white/10 rounded-lg px-2 py-1 cursor-pointer transition">
+                  <input type="radio" name="rq_${item.id}_${qIdx}" value="${oIdx}" class="mt-0.5 accent-amber-400 shrink-0" />
+                  <span class="leading-tight">${opt}</span>
+                </label>
+              `).join('')}
+            </div>
+          </div>
+        `).join('');
+
+        const isMobText = state.readingMobileTab === 'text';
+
+        document.getElementById('workspaceContent').innerHTML = `
+          <div class="casino-glass rounded-3xl flex-1 p-3 sm:p-4 flex flex-col gap-2.5 min-h-0 overflow-hidden">
+            <!-- Reading Card Selector Tabs (1-10) -->
+            <div class="flex items-center gap-1.5 overflow-x-auto thin-scroll pb-1 shrink-0">
+              ${tabsHtml}
+            </div>
+
+            <!-- Mobile Sub-Tabs (Text vs. Questions so mobile never scrolls globally) -->
+            <div class="flex md:hidden gap-2 shrink-0">
+              <button id="rdMobTextBtn" type="button" class="flex-1 py-1.5 rounded-xl text-xs font-bold ${isMobText ? 'gold-btn' : 'bg-white/10 text-slate-200'}">📄 Passage</button>
+              <button id="rdMobQBtn" type="button" class="flex-1 py-1.5 rounded-xl text-xs font-bold ${!isMobText ? 'gold-btn' : 'bg-white/10 text-slate-200'}">❓ Questions (3)</button>
+            </div>
+
+            <!-- Split Two-Column Workspace -->
+            <div class="flex-1 min-h-0 grid grid-cols-1 md:grid-cols-2 gap-3 overflow-hidden">
+              <!-- Left: Reading Passage -->
+              <div class="${isMobText ? 'flex' : 'hidden'} md:flex flex-col bg-[#f7f4e9] text-[#001f54] rounded-2xl p-3.5 sm:p-4 border-2 border-amber-400/70 min-h-0 overflow-hidden shadow-inner">
+                <div class="flex items-center justify-between border-b border-[#001f54]/15 pb-1.5 mb-2 shrink-0">
+                  <div>
+                    <div class="text-[10px] uppercase tracking-widest font-bold text-[#b88214]">Reading ${item.id}</div>
+                    <h3 class="font-bold text-sm sm:text-base text-[#001f54]">${item.title}</h3>
+                  </div>
+                  ${isDone ? '<span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-700 text-white font-bold">Done ✓</span>' : ''}
+                </div>
+                <div class="thin-scroll flex-1 text-xs sm:text-[13px] leading-relaxed whitespace-pre-line font-medium pr-1">
+                  ${escapeHtml(item.text)}
+                </div>
+              </div>
+
+              <!-- Right: 3 MCQs + Scan Button -->
+              <div class="${!isMobText ? 'flex' : 'hidden'} md:flex flex-col justify-between gap-2 min-h-0 overflow-hidden">
+                <div class="thin-scroll flex-1 space-y-2 pr-0.5">
+                  ${qHtml}
+                </div>
+                <button id="checkReadingBtn" type="button" class="gold-btn w-full rounded-xl py-2.5 text-xs uppercase tracking-wider shrink-0">
+                  A♠ Check Reading Answers
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+
+        document.getElementById('rdMobTextBtn').onclick = () => { state.readingMobileTab = 'text'; renderReadingView(); };
+        document.getElementById('rdMobQBtn').onclick = () => { state.readingMobileTab = 'questions'; renderReadingView(); };
+        document.getElementById('checkReadingBtn').onclick = () => evaluateReading(item);
+      }
+
+      function evaluateReading(item) {
+        const answers = [];
+        for (let i = 0; i < item.questions.length; i++) {
+          const checked = document.querySelector(`input[name="rq_${item.id}_${i}"]:checked`);
+          answers.push(checked ? parseInt(checked.value, 10) : -1);
+        }
+        if (answers.includes(-1)) {
+          setAceFeedback('<p class="text-amber-300 font-semibold">⚠️ Please select an answer for all 3 questions first!</p>', 'retry', true);
+          return;
+        }
+
+        aceScan(() => {
+          const wrongNums = [];
+          item.questions.forEach((q, i) => {
+            if (answers[i] !== q.ans) wrongNums.push(i + 1);
+          });
+
+          if (wrongNums.length === 0) {
+            markActivityCompleted('reading', item.id);
+            triggerCelebrationFX();
+            setAceFeedback(
+              `<p class="text-emerald-300 font-bold">🎉 Blackjack! 3/3 Correct on Reading ${item.id}!</p>
+               <p>You accurately extracted the key B1+/B2 business details. Continue to the next case or click <strong>Done ✓</strong>.</p>`,
+              'pass',
+              true
+            );
+            renderReadingView();
+          } else {
+            setAceFeedback(
+              `<p class="text-amber-300 font-bold">🔍 Ace Bot Found ${wrongNums.length} Mistake(s)</p>
+               <p>Review <strong>Question(s): ${wrongNums.join(', ')}</strong> carefully against the document.</p>
+               <p class="text-cyan-200"><strong>Clue:</strong> ${item.hint}</p>`,
+              'retry',
+              true
+            );
+          }
+        }, 'Scanning Case...');
+      }
+
+      // E. STATION 4: WRITING ("VIP Mail", 10 Scenarios, 60–90 Words)
+      function renderWritingView() {
+        const user = getCurrentUser();
+        const idx = state.subIndex.writing;
+        const item = WRITING_DATA[idx];
+        const isDone = user.progress.writing.includes(item.id);
+        const savedDraft = user.drafts.writing[item.id] || { subject: item.defaultSubject, body: '' };
+
+        const tabsHtml = WRITING_DATA.map((w, i) => {
+          const done = user.progress.writing.includes(w.id);
+          return `<button onclick="window._jcSub('writing', ${i})" class="tab-num-btn rounded-xl px-2.5 py-1 text-xs font-bold shrink-0 ${i === idx ? 'active' : ''} ${done ? 'completed' : ''}">
+            #${w.id}${done ? ' ✓' : ''}
+          </button>`;
+        }).join('');
+
+        document.getElementById('workspaceContent').innerHTML = `
+          <div class="casino-glass rounded-3xl flex-1 p-3 sm:p-4 flex flex-col gap-2.5 min-h-0 overflow-hidden">
+            <!-- Writing Card Selector Tabs (1-10) -->
+            <div class="flex items-center gap-1.5 overflow-x-auto thin-scroll pb-1 shrink-0">
+              ${tabsHtml}
+            </div>
+
+            <div class="flex-1 min-h-0 grid grid-cols-1 md:grid-cols-12 gap-3 overflow-hidden">
+              <!-- Left Brief (4 cols) -->
+              <div class="md:col-span-4 bg-[#021520]/80 border border-emerald-400/35 rounded-2xl p-3.5 flex flex-col justify-between gap-2 overflow-hidden">
+                <div class="thin-scroll space-y-2 pr-1">
+                  <div class="flex items-center justify-between">
+                    <span class="text-[10px] uppercase tracking-widest text-emerald-300 font-bold">VIP Mail #${item.id}</span>
+                    ${isDone ? '<span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold">Passed ✓</span>' : ''}
+                  </div>
+                  <h3 class="font-gold-serif text-base">${item.title}</h3>
+                  <p class="text-xs text-cyan-50 leading-relaxed">${item.prompt}</p>
+                </div>
+
+                <div class="bg-emerald-950/40 border border-emerald-400/25 rounded-xl p-2.5 text-[11px] space-y-1 text-emerald-100 shrink-0">
+                  <div class="font-bold text-amber-300">Checklist:</div>
+                  <div>• Word count: <strong>60–90 words</strong></div>
+                  <div>• Formal greeting &amp; closing</div>
+                  <div>• Clear B1+/B2 professional action</div>
+                </div>
+              </div>
+
+              <!-- Right VIP Mail Composer (8 cols) -->
+              <div class="md:col-span-8 bg-[#021520]/85 border border-amber-300/30 rounded-2xl p-3 flex flex-col gap-2 min-h-0 overflow-hidden">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 shrink-0 text-xs">
+                  <div class="bg-[#041d2c] border border-white/10 rounded-xl px-3 py-1.5 flex items-center gap-2">
+                    <span class="text-slate-400 font-semibold">To:</span>
+                    <span class="text-cyan-200 truncate">${item.to}</span>
+                  </div>
+                  <div class="bg-[#041d2c] border border-white/10 rounded-xl px-3 py-1.5 flex items-center gap-2">
+                    <span class="text-slate-400 font-semibold">Subj:</span>
+                    <input id="vipSubjectInput" type="text" value="${escapeHtml(savedDraft.subject)}" class="bg-transparent text-white w-full focus:outline-none text-xs" />
+                  </div>
+                </div>
+
+                <textarea id="vipBodyInput" placeholder="Dear Mr./Ms. ...,&#10;&#10;Write your 60–90 word professional email here...&#10;&#10;Kind regards,&#10;Your Name" class="thin-scroll flex-1 w-full rounded-xl bg-[#041d2c] border border-white/15 p-3 text-xs sm:text-sm text-white leading-relaxed focus:outline-none focus:border-emerald-400 resize-none">${escapeHtml(savedDraft.body)}</textarea>
+
+                <div class="flex flex-wrap items-center justify-between gap-2 shrink-0">
+                  <div class="flex items-center gap-2">
+                    <span class="text-[11px] text-slate-300">Word Counter:</span>
+                    <span id="vipWordBadge" class="text-xs font-extrabold px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-200 border border-amber-400/40">0 / 60–90</span>
+                  </div>
+                  <button id="scanEmailBtn" type="button" class="gold-btn rounded-xl px-5 py-2 text-xs uppercase tracking-wider">
+                    A♠ Scan VIP Mail
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        const bodyEl = document.getElementById('vipBodyInput');
+        const subjEl = document.getElementById('vipSubjectInput');
+
+        function updateCounter() {
+          const words = bodyEl.value.trim().split(/\s+/).filter(Boolean).length;
+          const badge = document.getElementById('vipWordBadge');
+          badge.textContent = `${words} words (target 60–90)`;
+          if (words >= 60 && words <= 90) {
+            badge.className = 'text-xs font-extrabold px-2.5 py-0.5 rounded-full bg-emerald-500/25 text-emerald-300 border border-emerald-400/60';
+          } else if (words > 90) {
+            badge.className = 'text-xs font-extrabold px-2.5 py-0.5 rounded-full bg-red-500/25 text-red-300 border border-red-400/60';
+          } else {
+            badge.className = 'text-xs font-extrabold px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-200 border border-amber-400/40';
+          }
+          updateCurrentUser(u => {
+            u.drafts.writing[item.id] = { subject: subjEl.value, body: bodyEl.value };
+          });
+        }
+
+        bodyEl.oninput = updateCounter;
+        subjEl.oninput = updateCounter;
+        updateCounter();
+
+        document.getElementById('scanEmailBtn').onclick = () => evaluateWriting(item, bodyEl.value);
+      }
+
+      function evaluateWriting(item, bodyText) {
+        const clean = bodyText.trim();
+        const lower = clean.toLowerCase();
+        const words = clean.split(/\s+/).filter(Boolean);
+        const wc = words.length;
+
+        const hasGreeting = /\b(dear|hello|good morning|good afternoon|hi\s+\w+)/i.test(clean);
+        const hasClosing = /\b(regards|sincerely|best wishes|best,|kind regards|warm regards|yours truly|yours faithfully|thank you)/i.test(clean);
+        const matchedKeywords = item.keywords.filter(k => lower.includes(k));
+
+        aceScan(() => {
+          const issues = [];
+          if (wc < 60) {
+            issues.push(`<strong>Too short (${wc} words):</strong> Add ${60 - wc} more words to reach the <strong>60–90 word</strong> target.`);
+          } else if (wc > 90) {
+            issues.push(`<strong>Too long (${wc} words):</strong> Trim ${wc - 90} words to stay concise within <strong>60–90 words</strong>.`);
+          }
+          if (!hasGreeting) {
+            issues.push(`<strong>Missing Greeting:</strong> Start formally (e.g., <em>"Dear Ms. Smith,"</em> or <em>"Good morning,"</em>).`);
+          }
+          if (!hasClosing) {
+            issues.push(`<strong>Missing Closing:</strong> End politely (e.g., <em>"Kind regards,"</em> or <em>"Sincerely,"</em>).`);
+          }
+          if (matchedKeywords.length < 2) {
+            issues.push(`<strong>Key Vocabulary:</strong> Include more scenario terms such as <em>${item.keywords.slice(0, 4).join(', ')}</em>.`);
+          }
+
+          if (issues.length === 0) {
+            markActivityCompleted('writing', item.id);
+            triggerCelebrationFX();
+            setAceFeedback(
+              `<p class="text-emerald-300 font-bold">🎉 VIP Mail Approved! (${wc} words)</p>
+               <p>Great structure, formal register, and relevant B1+/B2 vocabulary (<em>${matchedKeywords.slice(0, 4).join(', ')}</em>).</p>
+               <p class="text-amber-200">Move to another card or press <strong>Done ✓</strong> when ready!</p>`,
+              'pass',
+              true
+            );
+            renderWritingView();
+          } else {
+            setAceFeedback(
+              `<p class="text-amber-300 font-bold">🔍 Ace Bot Email Scan — Revisions Needed</p>
+               <ul class="list-disc pl-4 space-y-1">${issues.map(i => `<li>${i}</li>`).join('')}</ul>
+               <p class="text-cyan-200 pt-1"><strong>Tip:</strong> ${item.hint}</p>`,
+              'retry',
+              true
+            );
+          }
+        }, 'Scanning Email...');
+      }
+
+      // F. FINAL JACKPOT ("Grammar & Vocabulary Challenge", 5 Challenges × 20s)
+      function renderFinalJackpotView() {
+        const user = getCurrentUser();
+        const ch = FINAL_CHALLENGES[state.finalIdx];
+        const isDone = user.progress.final.includes(ch.id);
+
+        const tabsHtml = FINAL_CHALLENGES.map((c, i) => {
+          const done = user.progress.final.includes(c.id);
+          return `<button onclick="window._jcFinalTab(${i})" class="tab-num-btn rounded-xl px-3 py-1.5 text-xs font-bold ${i === state.finalIdx ? 'active' : ''} ${done ? 'completed' : ''}">
+            Challenge ${c.id}${done ? ' ✓' : ''}
+          </button>`;
+        }).join('');
+
+        document.getElementById('workspaceContent').innerHTML = `
+          <div class="casino-glass rounded-3xl flex-1 p-4 sm:p-6 flex flex-col justify-between gap-4 overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-2 shrink-0">
+              <div class="flex flex-wrap gap-1.5">${tabsHtml}</div>
+              <div class="flex items-center gap-2 bg-[#021520] border border-amber-400/50 rounded-full px-3.5 py-1">
+                <span class="text-xs text-cyan-200">Time:</span>
+                <span id="finalTimerDisp" class="font-mono font-extrabold text-base text-amber-300">${state.finalSeconds}s</span>
+              </div>
+            </div>
+
+            <div class="flex-1 flex flex-col items-center justify-center text-center max-w-xl mx-auto w-full gap-3">
+              <div class="text-[11px] uppercase tracking-[0.2em] text-amber-300 font-bold">${ch.title}</div>
+              <p class="text-xs text-cyan-200">${ch.situation}</p>
+              <div class="w-full rounded-2xl bg-[#021520]/90 border-2 border-amber-400/45 p-5 shadow-xl">
+                <div class="text-[11px] uppercase tracking-wider text-slate-400 mb-1.5">${ch.instruction}</div>
+                <div class="font-gold-serif text-lg sm:text-2xl leading-snug">${ch.prompt}</div>
+              </div>
+
+              ${!state.finalActive ? `
+                <button id="startFinalChallengeBtn" type="button" class="gold-btn rounded-2xl px-8 py-3 text-sm uppercase tracking-wider mt-1">
+                  ${isDone ? 'Replay 20s Challenge' : 'Start 20-Second Timer'}
+                </button>
+              ` : `
+                <form id="finalAnswerForm" class="w-full flex flex-col sm:flex-row gap-2 mt-1">
+                  <input id="finalAnswerInput" type="text" autocomplete="off" autofocus placeholder="Type your answer quickly..." class="flex-1 rounded-xl bg-[#041d2c] border border-amber-300/50 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-300" />
+                  <button type="submit" class="gold-btn rounded-xl px-6 py-2.5 text-xs uppercase tracking-wider">Submit ✓</button>
+                </form>
+              `}
+            </div>
+
+            <div class="text-center text-[11px] text-cyan-200/75 shrink-0">
+              Completed: <strong class="text-amber-300">${user.progress.final.length}/5</strong> Final Jackpot Challenges
+            </div>
+          </div>
+        `;
+
+        if (!state.finalActive) {
+          document.getElementById('startFinalChallengeBtn').onclick = () => {
+            state.finalActive = true;
+            state.finalSeconds = 20;
+            renderFinalJackpotView();
+            clearInterval(state.finalTimerId);
+            state.finalTimerId = setInterval(() => {
+              state.finalSeconds -= 1;
+              const disp = document.getElementById('finalTimerDisp');
+              if (disp) {
+                disp.textContent = `${state.finalSeconds}s`;
+                if (state.finalSeconds <= 5) disp.className = 'font-mono font-extrabold text-base text-red-400 animate-pulse';
+              }
+              if (state.finalSeconds <= 0) {
+                clearInterval(state.finalTimerId);
+                state.finalActive = false;
+                setAceFeedback(`<p class="text-red-300 font-bold">⏰ Time's Up!</p><p><strong>Clue:</strong> ${ch.hint}</p><p>Click Replay to try again in 20 seconds!</p>`, 'retry', true);
+                renderFinalJackpotView();
+              }
+            }, 1000);
+          };
+        } else {
+          document.getElementById('finalAnswerForm').onsubmit = (e) => {
+            e.preventDefault();
+            const val = document.getElementById('finalAnswerInput').value.trim().toLowerCase().replace(/\s+/g, ' ');
+            clearInterval(state.finalTimerId);
+            state.finalActive = false;
+
+            aceScan(() => {
+              if (ch.accepted.includes(val)) {
+                markActivityCompleted('final', ch.id);
+                triggerCelebrationFX();
+                setAceFeedback(
+                  `<p class="text-emerald-300 font-bold">🏆 JACKPOT! Correct Answer!</p>
+                   <p>You solved <strong>${ch.title}</strong> with ${state.finalSeconds}s left!</p>`,
+                  'pass',
+                  true
+                );
+                if (state.finalIdx < FINAL_CHALLENGES.length - 1) {
+                  state.finalIdx += 1;
+                }
+                state.finalSeconds = 20;
+                renderFinalJackpotView();
+              } else {
+                setAceFeedback(
+                  `<p class="text-amber-300 font-bold">🔍 Not quite right!</p>
+                   <p>Your answer: <em>"${escapeHtml(val || '(empty)')}"</em></p>
+                   <p class="text-cyan-200"><strong>Clue:</strong> ${ch.hint}</p>`,
+                  'retry',
+                  true
+                );
+                state.finalSeconds = 20;
+                renderFinalJackpotView();
+              }
+            }, 'Verifying Jackpot...');
+          };
+        }
+      }
+
+      /* -----------------------------------------------------------------------
+         11. STATION "DONE" EVALUATION & "CHOOSE NEXT STATION" BANNER
+      ----------------------------------------------------------------------- */
+      function handleStationDone() {
+        const sec = state.activeSection;
+        if (!['speaking', 'listening', 'writing', 'reading'].includes(sec)) return;
+        const user = getCurrentUser();
+        const completedCount = user.progress[sec].length;
+
+        aceScan(() => {
+          if (completedCount >= 1) {
+            stopStationTimer();
+            updateCurrentUser(u => { u.stationDoneApproved[sec] = true; });
+            triggerCelebrationFX();
+            setAceFeedback(
+              `<p class="text-emerald-300 font-bold">🏆 Station Approved by Ace Bot!</p>
+               <p>You completed <strong>${completedCount}/10</strong> activities in <strong>${sec.toUpperCase()}</strong>. You are ready to move on — <em>Choose Next Station</em>!</p>`,
+              'pass',
+              false
+            );
+            openChooseNextStationModal(sec, completedCount);
+          } else {
+            setAceFeedback(
+              `<p class="text-amber-300 font-bold">🛑 Wait! Not Ready Yet</p>
+               <p>Complete and pass at least <strong>1 activity</strong> in <strong>${sec.toUpperCase()}</strong> before advancing to the next station.</p>
+               <p class="text-cyan-200">Need a nudge? Spend 1 🪙 for an Ace Hint!</p>`,
+              'retry',
+              true
+            );
+          }
+        }, 'Final Station Scan...');
+      }
+
+      function openChooseNextStationModal(justFinished, count) {
+        const user = getCurrentUser();
+        document.getElementById('nextStationSubtitle').textContent =
+          `Ace Bot verified your ${justFinished.toUpperCase()} station (${count}/10 completed). Choose your next station!`;
+
+        const stations = [
+          { key: 'speaking', name: 'SPEAKING', sub: 'Poker Interview', cls: 'station-speaking-txt', count: `${user.progress.speaking.length}/10` },
+          { key: 'listening', name: 'LISTENING', sub: 'Roulette Audio', cls: 'station-listening-txt', count: `${user.progress.listening.length}/10` },
+          { key: 'writing', name: 'WRITING', sub: 'VIP Mail', cls: 'station-writing-txt', count: `${user.progress.writing.length}/10` },
+          { key: 'reading', name: 'READING', sub: 'Blackjack Match', cls: 'station-reading-pill px-2 py-0.5 rounded inline-block', isReading: true, count: `${user.progress.reading.length}/10` }
+        ];
+
+        const grid = document.getElementById('nextStationGrid');
+        grid.innerHTML = stations.map(st => `
+          <button onclick="window._jcPickNext('${st.key}')" class="rounded-2xl p-3 bg-[#021520]/85 hover:bg-[#073047] border ${st.key === justFinished ? 'border-emerald-400/60' : 'border-amber-300/35'} text-left transition">
+            <div class="flex items-center justify-between mb-1">
+              ${st.isReading
+                ? `<span class="${st.cls}"><span class="station-reading-txt text-xs">READING</span></span>`
+                : `<span class="${st.cls} font-extrabold text-xs">${st.name}</span>`}
+              <span class="text-[10px] text-amber-200 font-bold">${st.count}</span>
+            </div>
+            <div class="text-[11px] text-slate-300">${st.sub}</div>
+          </button>
+        `).join('') + `
+          <button onclick="window._jcPickNext('final')" class="col-span-2 gold-btn rounded-2xl py-2.5 text-xs uppercase tracking-wider">
+            🏆 Final Jackpot: Grammar &amp; Vocabulary (${user.progress.final.length}/5)
+          </button>
+        `;
+
+        document.getElementById('nextStationModal').classList.remove('hidden');
+      }
+
+      /* -----------------------------------------------------------------------
+         12. CHIPS EXCHANGE (Hints & +2 Min Extra Time)
+      ----------------------------------------------------------------------- */
+      function buyAceHint() {
+        const user = getCurrentUser();
+        if (!user) return;
+        if (user.chips < 1) {
+          showToast('Not enough chips! Complete an activity to earn more 🪙.');
+          return;
+        }
+        let hintText = 'Select any station to get a tailored B1+/B2 hint from Ace Bot!';
+        const sec = state.activeSection;
+        if (sec === 'speaking') hintText = SPEAKING_DATA[state.subIndex.speaking].hint;
+        else if (sec === 'listening') hintText = LISTENING_DATA[state.subIndex.listening].hint;
+        else if (sec === 'reading') hintText = READING_DATA[state.subIndex.reading].hint;
+        else if (sec === 'writing') hintText = WRITING_DATA[state.subIndex.writing].hint;
+        else if (sec === 'final') hintText = FINAL_CHALLENGES[state.finalIdx].hint;
+        else {
+          showToast('Enter a station first to use a Hint chip!');
+          return;
+        }
+
+        updateCurrentUser(u => { u.chips -= 1; });
+        playScanBeep();
+        setAceFeedback(
+          `<p class="text-amber-300 font-bold">💡 Ace Hint Unlocked (-1 🪙)</p>
+           <p class="text-cyan-50">${hintText}</p>`,
+          null,
+          true
+        );
+      }
+
+      function buyExtraTime() {
+        const sec = state.activeSection;
+        if (!['speaking', 'listening', 'writing', 'reading'].includes(sec)) return;
+        const user = getCurrentUser();
+        if (user.chips < 1) {
+          showToast('You need at least 1 Chip 🪙 for +2 minutes!');
+          return;
+        }
+        updateCurrentUser(u => { u.chips -= 1; });
+        state.timers[sec] += 120;
+        renderTimerUI(sec);
+        if (!state.timerInterval) startStationTimer(sec);
+        showToast('+2 minutes added to station timer! (-1 🪙)');
+      }
+
+      /* -----------------------------------------------------------------------
+         13. CROUPIER ADMIN LEADERBOARD (Passcode: jackpot2026)
+      ----------------------------------------------------------------------- */
+      let croupierUnlocked = false;
+
+      function openCroupierModal() {
+        document.getElementById('croupierModal').classList.remove('hidden');
+        document.getElementById('croupierAuthErr').classList.add('hidden');
+        if (croupierUnlocked) {
+          document.getElementById('croupierAuthBox').classList.add('hidden');
+          document.getElementById('croupierDashboard').classList.remove('hidden');
+          renderCroupierLeaderboard();
+        } else {
+          document.getElementById('croupierAuthBox').classList.remove('hidden');
+          document.getElementById('croupierDashboard').classList.add('hidden');
+          document.getElementById('croupierPassInput').value = '';
+          setTimeout(() => document.getElementById('croupierPassInput').focus(), 60);
+        }
+      }
+
+      function renderCroupierLeaderboard() {
+        const usersObj = loadAllUsers();
+        const list = Object.values(usersObj).map(u => {
+          const spk = u.progress.speaking.length;
+          const lst = u.progress.listening.length;
+          const wrt = u.progress.writing.length;
+          const rdg = u.progress.reading.length;
+          const fin = u.progress.final.length;
+          const total = spk + lst + wrt + rdg + fin;
+          const pct = Math.round((total / 45) * 100);
+          return { ...u, spk, lst, wrt, rdg, fin, total, pct };
+        }).sort((a, b) => (b.total - a.total) || (b.chips - a.chips));
+
+        document.getElementById('croupierTotalPlayers').textContent = list.length;
+        const tbody = document.getElementById('croupierTableBody');
+
+        if (list.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="10" class="p-6 text-center text-slate-400">No players registered on this device yet.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = list.map((u, idx) => `
+          <tr class="hover:bg-white/5 transition">
+            <td class="p-2.5 font-bold text-amber-300">${idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : idx + 1}</td>
+            <td class="p-2.5">
+              <div class="flex items-center gap-2">
+                <span class="text-lg">${u.avatar}</span>
+                <div>
+                  <div class="font-bold text-white">${escapeHtml(u.name)}</div>
+                  <div class="text-[10px] text-slate-400">${escapeHtml(u.email)}</div>
+                </div>
+              </div>
+            </td>
+            <td class="p-2.5 font-bold text-amber-300">🪙 ${u.chips}</td>
+            <td class="p-2.5 text-red-300 font-semibold">${u.spk}/10</td>
+            <td class="p-2.5 text-slate-300 font-semibold">${u.lst}/10</td>
+            <td class="p-2.5 text-emerald-300 font-semibold">${u.wrt}/10</td>
+            <td class="p-2.5 text-cyan-200 font-semibold">${u.rdg}/10</td>
+            <td class="p-2.5 text-amber-200 font-semibold">${u.fin}/5</td>
+            <td class="p-2.5">
+              <div class="flex items-center gap-1.5">
+                <div class="w-14 h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-cyan-400 to-amber-300" style="width:${u.pct}%"></div>
+                </div>
+                <span class="font-bold text-white">${u.pct}%</span>
+              </div>
+            </td>
+            <td class="p-2.5 text-right">
+              <button onclick="window._jcBonusChip('${escapeHtml(u.email)}')" class="rounded-lg px-2 py-1 bg-amber-400/20 hover:bg-amber-400/35 border border-amber-300/40 text-amber-200 text-[10px] font-bold">
+                +1 🪙
+              </button>
+            </td>
+          </tr>
+        `).join('');
+      }
+
+      function exportLeaderboardCSV() {
+        const users = Object.values(loadAllUsers());
+        const header = ['Name', 'Email', 'Chips', 'Speaking/10', 'Listening/10', 'Writing/10', 'Reading/10', 'Final/5', 'Completion%'];
+        const rows = users.map(u => {
+          const total = u.progress.speaking.length + u.progress.listening.length + u.progress.writing.length + u.progress.reading.length + u.progress.final.length;
+          return [
+            `"${u.name.replace(/"/g, '""')}"`,
+            u.email,
+            u.chips,
+            u.progress.speaking.length,
+            u.progress.listening.length,
+            u.progress.writing.length,
+            u.progress.reading.length,
+            u.progress.final.length,
+            `${Math.round((total / 45) * 100)}%`
+          ].join(',');
+        });
+        const csv = [header.join(','), ...rows].join('\n');
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'jackpot_casino_leaderboard.csv';
+        a.click();
+        URL.revokeObjectURL(url);
+        showToast('Leaderboard exported to CSV!');
+      }
+
+      /* -----------------------------------------------------------------------
+         14. PROFILE EDITOR MODAL
+      ----------------------------------------------------------------------- */
+      let selectedEditAvatar = '🐙';
+
+      function openProfileModal() {
+        const user = getCurrentUser();
+        if (!user) return;
+        document.getElementById('profileNameInput').value = user.name;
+        selectedEditAvatar = user.avatar;
+        renderAvatarGrid();
+        document.getElementById('profileModal').classList.remove('hidden');
+      }
+
+      function renderAvatarGrid() {
+        const grid = document.getElementById('avatarGrid');
+        grid.innerHTML = MARINE_AVATARS.map(av => `
+          <button type="button" onclick="window._jcPickAvatar('${av}')" class="text-2xl p-2 rounded-xl border transition ${av === selectedEditAvatar ? 'bg-amber-400/25 border-amber-300 scale-105' : 'bg-[#021520] border-white/10 hover:bg-white/10'}">
+            ${av}
+          </button>
+        `).join('');
+      }
+
+      /* -----------------------------------------------------------------------
+         15. UTILITIES & GLOBAL EVENT BINDINGS
+      ----------------------------------------------------------------------- */
+      function escapeHtml(str) {
+        return String(str || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      // Expose clean inline handlers for generated HTML
+      window._jcNav = (sec) => navigateTo(sec);
+      window._jcSub = (sec, idx) => {
+        stopListeningAudio();
+        stopSpeakingMic();
+        state.subIndex[sec] = idx;
+        if (sec === 'speaking') renderSpeakingView();
+        else if (sec === 'listening') renderListeningView();
+        else if (sec === 'reading') renderReadingView();
+        else if (sec === 'writing') renderWritingView();
+      };
+      window._jcFinalTab = (idx) => {
+        clearInterval(state.finalTimerId);
+        state.finalActive = false;
+        state.finalIdx = idx;
+        state.finalSeconds = 20;
+        renderFinalJackpotView();
+      };
+      window._jcPickNext = (sec) => {
+        document.getElementById('nextStationModal').classList.add('hidden');
+        navigateTo(sec);
+      };
+      window._jcPickAvatar = (av) => {
+        selectedEditAvatar = av;
+        renderAvatarGrid();
+      };
+      window._jcBonusChip = (email) => {
+        const users = loadAllUsers();
+        if (users[email]) {
+          users[email].chips += 1;
+          saveAllUsers(users);
+          renderCroupierLeaderboard();
+          syncHeaderAndBadges();
+          showToast(`Awarded +1 bonus chip to ${users[email].name}!`);
+        }
+      };
+
+      // DOM Ready Bindings
+      window.addEventListener('DOMContentLoaded', () => {
+        initBubblesCanvas();
+
+        // Login form
+        document.getElementById('loginForm').onsubmit = (e) => {
+          e.preventDefault();
+          const email = document.getElementById('loginEmail').value;
+          const pin = document.getElementById('loginPin').value.trim();
+          const errEl = document.getElementById('loginError');
+          if (!/^\d{4}$/.test(pin)) {
+            errEl.textContent = 'PIN must be exactly 4 numeric digits.';
+            errEl.classList.remove('hidden');
+            return;
+          }
+          const res = loginUser(email, pin);
+          if (!res.ok) {
+            errEl.textContent = res.error;
+            errEl.classList.remove('hidden');
+          } else {
+            errEl.classList.add('hidden');
+          }
+        };
+
+        // Sidebar Navigation Buttons
+        document.querySelectorAll('.nav-station-btn').forEach(btn => {
+          btn.onclick = () => navigateTo(btn.dataset.nav);
+        });
+
+        // Mobile Sidebar Drawer
+        document.getElementById('mobileMenuBtn').onclick = () => {
+          document.getElementById('sidebar').classList.remove('-translate-x-full');
+          document.getElementById('sidebarBackdrop').classList.remove('hidden');
+        };
+        document.getElementById('closeSidebarBtn').onclick = closeMobileSidebar;
+        document.getElementById('sidebarBackdrop').onclick = closeMobileSidebar;
+
+        // Top Bar & Action Buttons
+        document.getElementById('logoutBtn').onclick = logoutUser;
+        document.getElementById('openProfileBtn').onclick = openProfileModal;
+        document.getElementById('closeProfileBtn').onclick = () => document.getElementById('profileModal').classList.add('hidden');
+        document.getElementById('saveProfileBtn').onclick = () => {
+          const newName = document.getElementById('profileNameInput').value.trim();
+          if (!newName) return;
+          updateCurrentUser(u => {
+            u.name = newName;
+            u.avatar = selectedEditAvatar;
+          });
+          document.getElementById('profileModal').classList.add('hidden');
+          if (state.activeSection === 'hub') renderHubView();
+          showToast('Profile updated!');
+        };
+
+        document.getElementById('stationDoneBtn').onclick = handleStationDone;
+        document.getElementById('closeNextStationBtn').onclick = () => document.getElementById('nextStationModal').classList.add('hidden');
+        document.getElementById('buyHintBtn').onclick = buyAceHint;
+        document.getElementById('addTimeChipBtn').onclick = buyExtraTime;
+
+        // Mobile Ace Bot Modal
+        document.getElementById('mobileAceBtn').onclick = () => document.getElementById('mobileAceModal').classList.remove('hidden');
+        document.getElementById('closeMobileAceBtn').onclick = () => document.getElementById('mobileAceModal').classList.add('hidden');
+        document.getElementById('closeMobileAceOkBtn').onclick = () => document.getElementById('mobileAceModal').classList.add('hidden');
+
+        // CROUPIER Admin Controls
+        document.getElementById('openCroupierBtn').onclick = openCroupierModal;
+        document.getElementById('welcomeCroupierBtn').onclick = openCroupierModal;
+        document.getElementById('closeCroupierBtn').onclick = () => document.getElementById('croupierModal').classList.add('hidden');
+        document.getElementById('croupierUnlockBtn').onclick = () => {
+          const code = document.getElementById('croupierPassInput').value.trim();
+          if (code === 'jackpot2026') {
+            croupierUnlocked = true;
+            document.getElementById('croupierAuthBox').classList.add('hidden');
+            document.getElementById('croupierDashboard').classList.remove('hidden');
+            renderCroupierLeaderboard();
+          } else {
+            document.getElementById('croupierAuthErr').classList.remove('hidden');
+          }
+        };
+        document.getElementById('croupierPassInput').onkeydown = (e) => {
+          if (e.key === 'Enter') document.getElementById('croupierUnlockBtn').click();
+        };
+        document.getElementById('exportCsvBtn').onclick = exportLeaderboardCSV;
+        document.getElementById('resetLeaderboardBtn').onclick = () => {
+          showDialog({
+            title: 'Reset All Local Progress?',
+            message: 'This will permanently erase all player accounts and progress stored on this device.',
+            buttons: [
+              { label: 'Cancel', primary: false },
+              {
+                label: 'Yes, Reset All',
+                primary: true,
+                onClick: () => {
+                  localStorage.removeItem(STORAGE_KEY);
+                  localStorage.removeItem(SESSION_KEY);
+                  renderCroupierLeaderboard();
+                  showToast('Local leaderboard cleared.');
+                  if (state.currentUserEmail) logoutUser();
+                }
+              }
+            ]
+          });
+        };
+
+        // Restore active session if present
+        const savedEmail = localStorage.getItem(SESSION_KEY);
+        const users = loadAllUsers();
+        if (savedEmail && users[savedEmail]) {
+          state.currentUserEmail = savedEmail;
+          enterCasinoApp();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
